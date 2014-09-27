@@ -42,7 +42,7 @@ If you need to localize the error message, just add this to your I18n locale fil
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/validates_zipcode/fork )
+1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -50,11 +50,11 @@ If you need to localize the error message, just add this to your I18n locale fil
 
 ## Contributors
 
-To see the generous people who have contributed code, take a look at the {contributors list}[http://github.com/dgilperez/validates_zipcode/contributors].
+To see the generous people who have contributed code, take a look at the (contributors list)[http://github.com/dgilperez/validates_zipcode/contributors].
 
 ## Maintainers
 
-* {David Gil}[http://github.com/dgilperez]
+* (David Gil)[http://github.com/dgilperez]
 
 ## License
 
