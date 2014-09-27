@@ -1,4 +1,4 @@
-# ValidatesZipcode [![Build Status](https://secure.travis-ci.org/dgilperez/validates_zipcode.png)](https://secure.travis-ci.org/dgilperez/validates_zipcode.png)
+# ValidatesZipcode [![Build Status](https://secure.travis-ci.org/dgilperez/validates_zipcode.png)](https://travis-ci.org/dgilperez/validates_zipcode)
 
 Add zipcode validation support to Rails (ActiveModel), considering different zipcode country formats.
 
