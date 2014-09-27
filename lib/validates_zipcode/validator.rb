@@ -16,16 +16,7 @@ require 'active_model/validator'
 module ValidatesZipcode
   class Validator < ActiveModel::EachValidator
     # using country alpha2 code as key
-    ZIPCODES_REGEX = {
-      ES: /\A\d{5}\z/,
-      AR: /\A([A-HJ-TP-Z]{1}\d{4}[A-Z]{3}|[a-z]{1}\d{4}[a-hj-tp-z]{3})\z/,
-      CL: /\A[0-9]{3}[-]?[0-9]{4}\z/,
-      NZ: /\A\d{4}\z/,
-      AU: /\A\d{4}\z/,
-      US: /\A\d{5}(-\d{4})?\z/,
-      CA: /\A[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}\z/
-      # CA: /\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTWVXYZ]\d[ABCEGHJKLMNPRSTWVXYZ]\d\z/
-    }
+    include CldrRegexpCollection
 
     def initialize(options)
       @country_code = options.fetch(:country_code) { }
@@ -36,8 +27,7 @@ module ValidatesZipcode
 
     def validate_each(record, attribute, value)
       alpha2 = @country_code || record.send(@country_code_attribute)
-      alpha2 = alpha2.to_s.upcase.to_sym
-      regexp = ZIPCODES_REGEX[alpha2]
+      regexp = regexp_for_country_alpha2(alpha2)
       return unless regexp
 
       unless regexp.match(value.to_s)
