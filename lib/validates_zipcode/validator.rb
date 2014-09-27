@@ -3,7 +3,8 @@
 # class User < ActiveModel
 #   validates :postalcode, zipcode: true
 #
-#   # Required country_alpha2 attribute
+#   # Default country_alpha2 attribute.
+#   # You can change it using :country_code_attribute option
 #   def country_alpha2
 #     country.alpha2
 #   end
@@ -15,7 +16,6 @@ require 'active_model/validator'
 
 module ValidatesZipcode
   class Validator < ActiveModel::EachValidator
-    # using country alpha2 code as key
     include CldrRegexpCollection
 
     def initialize(options)
