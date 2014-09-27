@@ -50,11 +50,11 @@ If you need to localize the error message, just add this to your I18n locale fil
 
 ## Contributors
 
-To see the generous people who have contributed code, take a look at the (contributors list)[http://github.com/dgilperez/validates_zipcode/contributors].
+To see the generous people who have contributed code, take a look at the [contributors list](http://github.com/dgilperez/validates_zipcode/contributors).
 
 ## Maintainers
 
-* (David Gil)[http://github.com/dgilperez]
+* [David Gil](http://github.com/dgilperez)
 
 ## License
 
