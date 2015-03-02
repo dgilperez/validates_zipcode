@@ -95,6 +95,18 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context 'Serbia' do
+    it 'validates with a valid zipcode' do
+      record = build_record('21000', 'RS')
+      zipcode_should_be_valid(record)
+    end
+    
+    it 'does not validate with an invalid zipcode' do
+      record = build_record('2100', 'RS')
+      zipcode_should_be_invalid(record)
+    end
+  end
+  
   context "unknown country" do
     it 'does not add errors with a any zipcode' do
       record = build_record('A1J2Z9', 'ZZ')
