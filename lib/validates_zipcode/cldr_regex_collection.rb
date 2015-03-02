@@ -121,7 +121,7 @@ module ValidatesZipcode
       AS: /\A96799\z/,
       CC: /\A6799\z/,
       CK: /\A\d{4}\z/,
-      RS: /\A\d{6}\z/,
+      RS: /\A\d{5}\z/,
       ME: /\A8\d{4}\z/,
       CS: /\A\d{5}\z/,
       YU: /\A\d{5}\z/,
