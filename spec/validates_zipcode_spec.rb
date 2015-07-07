@@ -114,6 +114,30 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context 'Lithuania' do
+    it 'validates with a valid zipcode' do
+      record = build_record('LT-0110', 'LT')
+      zipcode_should_be_valid(record)
+    end
+    
+    it 'does not validate with an invalid zipcode' do
+      record = build_record('21006', 'LT')
+      zipcode_should_be_invalid(record)
+    end
+  end
+
+  context 'Moldova' do
+    it 'validates with a valid zipcode' do
+      record = build_record('MD2001', 'MD')
+      zipcode_should_be_valid(record)
+    end
+    
+    it 'does not validate with an invalid zipcode' do
+      record = build_record('MD-2100', 'MD')
+      zipcode_should_be_invalid(record)
+    end
+  end
+  
   def zipcode_should_be_valid(record)
     ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
 
