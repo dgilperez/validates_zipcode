@@ -202,7 +202,7 @@ module ValidatesZipcode
       NA: /\A\d{5}\z/,
       NP: /\A\d{6}\z/,
       NR: /\A([a-zA-Z\d\s]){3,}\z/,
-      PT: /\A\d{8}\z/,
+      PT: /\A\d{4}([\-]\d{3})?\z/,
       PS: /\A\d{3}\z/,
       PA: /\A\d{6}\z/,
       PE: /\A\d{5}\z/,
