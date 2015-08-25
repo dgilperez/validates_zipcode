@@ -155,14 +155,18 @@ end
 
 describe ValidatesZipcode, '.valid?' do
   context "Spain" do
-    it 'does not add errors with a valid zipcode' do
+    it 'is true with a valid zipcode for a given country code' do
       expect(ValidatesZipcode.valid?('93108', 'ES')).to eq(true)
     end
 
-    it 'adds errors with an invalid Zipcode' do
+    it 'is false with an invalid zipcode for a given country code' do
       ['1234', '12345-12345', 'D0D0D0', 'invalid_zip'].each do |zipcode|
         expect(ValidatesZipcode.valid?(zipcode, 'ES')).to eq(false)
       end
+    end
+
+    it "is true with an unknown country code -  we don't have all!" do
+      expect(ValidatesZipcode.valid?('12345', 'ZZ')).to eq(true)
     end
   end
 end
