@@ -151,32 +151,46 @@ describe ValidatesZipcode, '#validate_each' do
       zipcode_should_be_invalid(record)
     end
   end
+end
 
-  def zipcode_should_be_valid(record)
-    ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
+describe ValidatesZipcode, '.valid?' do
+  context "Spain" do
+    it 'does not add errors with a valid zipcode' do
+      expect(ValidatesZipcode.valid?('93108', 'ES')).to eq(true)
+    end
 
-    expect(record.errors).to be_empty
-  end
-
-  def zipcode_should_be_invalid(record, zipcode = "invalid_zip")
-    ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
-
-    expect(record.errors.size).to eq 1
-  end
-
-  def build_record(zipcode, country_alpha2)
-    ValidationDummyClass.new.tap do |object|
-      object.country_alpha2 = country_alpha2
-      object.zipcode = zipcode
+    it 'adds errors with an invalid Zipcode' do
+      ['1234', '12345-12345', 'D0D0D0', 'invalid_zip'].each do |zipcode|
+        expect(ValidatesZipcode.valid?(zipcode, 'ES')).to eq(false)
+      end
     end
   end
+end
 
-  class ValidationDummyClass
-    include ::ActiveModel::Validations
-    attr_accessor :zipcode, :country_alpha2
+def zipcode_should_be_valid(record)
+  ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
 
-    def self.name
-      'TestClass'
-    end
+  expect(record.errors).to be_empty
+end
+
+def zipcode_should_be_invalid(record, zipcode = "invalid_zip")
+  ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
+
+  expect(record.errors.size).to eq 1
+end
+
+def build_record(zipcode, country_alpha2)
+  ValidationDummyClass.new.tap do |object|
+    object.country_alpha2 = country_alpha2
+    object.zipcode = zipcode
+  end
+end
+
+class ValidationDummyClass
+  include ::ActiveModel::Validations
+  attr_accessor :zipcode, :country_alpha2
+
+  def self.name
+    'TestClass'
   end
 end

@@ -238,7 +238,7 @@ module ValidatesZipcode
       WS: /\A([a-zA-Z\d\s]){3,}\z/,
       YE: /\A([a-zA-Z\d\s]){3,}\z/,
       ZW: /\A([a-zA-Z\d\s]){3,}\z/
-    }
+    }.freeze
 
     def regexp_for_country_alpha2(alpha2)
       alpha2 = alpha2.to_s.upcase.to_sym
