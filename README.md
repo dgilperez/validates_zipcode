@@ -48,6 +48,8 @@ If you need to localize the error message, just add this to your I18n locale fil
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+Also, you should read and follow our [Code of Conduct](https://github.com/dgilperez/validates_zipcode/blob/master/CODE_OF_CONDUCT.md).
+
 ## Contributors
 
 To see the generous people who have contributed code, take a look at the [contributors list](http://github.com/dgilperez/validates_zipcode/contributors).
