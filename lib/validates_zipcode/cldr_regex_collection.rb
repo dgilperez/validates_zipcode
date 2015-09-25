@@ -43,7 +43,7 @@ module ValidatesZipcode
       CL: /\A\d{3}[-]?\d{4}\z/,
       HR: /\A\d{5}\z/,
       CY: /\A\d{4}\z/,
-      CZ: /\A\d{3}[ ]?\d{2}\z/,
+      CZ: /\A[1-7][0-9]{2}[ ]?\d{2}\z/,
       DO: /\A\d{5}\z/,
       EC: /\A([A-Z]\d{4}[A-Z]|(?:[A-Z]{2})?\d{6})?\z/,
       EE: /\A\d{5}\z/,
