@@ -27,7 +27,7 @@ module ValidatesZipcode
       alpha2 = @country_code || record.send(@country_code_attribute)
 
       unless ValidatesZipcode::Zipcode.new(zipcode: value.to_s, country_alpha2: alpha2).valid?
-        record.errors.add(attribute, I18n.t('errors.messages.invalid_zipcode', value: value))
+        record.errors.add(attribute, I18n.t('errors.messages.invalid_zipcode', value: value, default: 'Zipcode is invalid'))
       end
     end
   end

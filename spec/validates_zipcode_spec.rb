@@ -209,6 +209,7 @@ def zipcode_should_be_invalid(record, zipcode = "invalid_zip")
   ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
 
   expect(record.errors.size).to eq 1
+  expect(record.errors.messages[:zipcode]).to include 'Zipcode is invalid'
 end
 
 def build_record(zipcode, country_alpha2)
