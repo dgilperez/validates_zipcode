@@ -2,7 +2,7 @@
 
 Add zipcode validation support to Rails (ActiveModel), considering different zipcode country formats.
 
-``ValidatesZipcode`` currently support **259 countries**. Regex data taken from several sources, being the main source the [CLDR](common/supplemental/postalCodeData.xml) database (around 159). Any other country's zipcode will validate without errors.
+``ValidatesZipcode`` currently support **259 countries**. Regex data taken from several sources, being the main source the [CLDR](http://unicode.org/cldr/trac/browser/tags/release-27-d05/common/supplemental/postalCodeData.xml) database (release 27, around 159). Any other country's zipcode will validate without errors.
 
 ``ValidatesZipcode`` works for Rails 3 & 4 and Ruby >= 1.9.3.
 

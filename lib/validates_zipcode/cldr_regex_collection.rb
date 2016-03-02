@@ -176,7 +176,7 @@ module ValidatesZipcode
       GM: /\A([a-zA-Z\d\s]){3,}\z/,
       GN: /\A([a-zA-Z\d\s]){3,}\z/,
       GI: /\A(GX11 1AA)\z/,
-      GR: /\A\d{3}([ ]\d{2})\z/,
+      GR: /\A\d{3}[ ]?\d{2}\z/,
       GY: /\A([a-zA-Z\d\s]){3,}\z/,
       HN: /\A(([a-zA-Z]){2}|\d{2})\d{4}\z/,
       IO: /\A\d{5}\z/,
