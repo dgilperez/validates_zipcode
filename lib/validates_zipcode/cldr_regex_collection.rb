@@ -8,7 +8,7 @@ module ValidatesZipcode
       JE: /\AJE\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}\z/,
       GG: /\AGY\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}\z/,
       IM: /\AIM\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}\z/,
-      US: /\A\d{5}([ \-]\d{4})?\z/,
+      US: /\A\d{5}([ \-](?:\d{4}|\d{6}))?\z/,
       CA: /\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z/,
       DE: /\A\d{5}\z/,
       AU: /\A\d{4}\z/,
