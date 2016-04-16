@@ -1,8 +1,8 @@
 # ValidatesZipcode [![Build Status](https://secure.travis-ci.org/dgilperez/validates_zipcode.png)](https://travis-ci.org/dgilperez/validates_zipcode) [![Code Climate](https://codeclimate.com/github/dgilperez/validates_zipcode/badges/gpa.svg)](https://codeclimate.com/github/dgilperez/validates_zipcode) [![Gem Version](https://badge.fury.io/rb/validates_zipcode.svg)](http://badge.fury.io/rb/validates_zipcode) [![security](https://hakiri.io/github/dgilperez/validates_zipcode/master.svg)](https://hakiri.io/github/dgilperez/validates_zipcode/master)
 
-Add zipcode validation support to Rails (ActiveModel), considering different zipcode country formats.
+Adds zipcode / postal code validation support to Rails (ActiveModel), considering postal code formats for mostly every country.
 
-``ValidatesZipcode`` currently support **259 countries**. Regex data taken from several sources, being the main source the [CLDR](http://unicode.org/cldr/trac/browser/tags/release-27-d05/common/supplemental/postalCodeData.xml) database (release 27, around 159). Any other country's zipcode will validate without errors.
+``ValidatesZipcode`` currently support **259 countries**. Regex data taken from several sources, being the main source the [CLDR](http://unicode.org/cldr/trac/browser/tags/release-27-d05/common/supplemental/postalCodeData.xml) database (release 27, around 159). Any other country's postal code will validate without errors.
 
 ``ValidatesZipcode`` works for Rails 3 & 4 and Ruby >= 1.9.3.
 
