@@ -19,7 +19,7 @@ describe ValidatesZipcode, '#validate_each' do
     it 'does not add errors with a valid zipcode' do
       record = build_record('93108', "US")
       zipcode_should_be_valid(record)
-      [12345, '12345', '12345-1234', '12345-123456'].each do |zipcode|
+      [12345, '12345', '12345-1234', '12345-123456', '12345 1234', '12345 123456'].each do |zipcode|
         record = build_record(zipcode, 'US')
         zipcode_should_be_valid(record)
       end
