@@ -152,6 +152,20 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context 'Brazil' do
+    it 'validates with a valid zipcode' do
+      ['72315', '72315-500', '72315500', '24210-325', '24210325'].each do |zipcode|
+        record = build_record(zipcode, 'BR')
+        zipcode_should_be_valid(record)
+      end
+    end
+
+    it 'does not validate with an invalid zipcode' do
+      record = build_record('723155', 'BR')
+      zipcode_should_be_invalid(record)
+    end
+  end
+
   context 'Czech' do
     it 'validates with a valid zipcode' do
       ['12000', '721 00'].each do |zipcode|
