@@ -148,7 +148,7 @@ module ValidatesZipcode
       BI: /\A([a-zA-Z\d\s]){3,}\z/,
       BS: /\A([a-zA-Z\d\s]){3,}\z/,
       BZ: /\A([a-zA-Z\d\s]){3,}\z/,
-      BR: /\A\d{4}[a-zA-Z][\- | [ ]]\d{2}[a-zA-Z]\z/,
+      BR: /\A\d{5}(-?\d{3})?\z/,
       BJ: /\A([a-zA-Z\d\s]){3,}\z/,
       BT: /\A\d{5}\z/,
       BQ: /\A([a-zA-Z\d\s]){3,}\z/,
