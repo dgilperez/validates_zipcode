@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.11
+
+- Fix Brazil zipcode ~ @pedrosfdcarneiro
+
 ## 0.0.10
 
 - Support zip+6 for the USA ~ @dimroc
