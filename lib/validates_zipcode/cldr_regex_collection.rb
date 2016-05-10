@@ -209,7 +209,7 @@ module ValidatesZipcode
       QA: /\A([a-zA-Z\d\s]){3,}\z/,
       RW: /\A([a-zA-Z\d\s]){3,}\z/,
       SC: /\A([a-zA-Z\d\s]){3,}\z/,
-      SE: /\A\d{3}[ ]\d{2}\z/,
+      SE: /\A\d{3}[ ]?\d{2}\z/,
       SK: /\A[089]\d{2}[ ]?\d{2}\z/,
       SL: /\A([a-zA-Z\d\s]){3,}\z/,
       SB: /\A([a-zA-Z\d\s]){3,}\z/,
