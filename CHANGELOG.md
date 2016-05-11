@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.12
+
+- Sweden whitespace made optional ~ @radubatori
+
 ## 0.0.11
 
 - Fix Brazil zipcode ~ @pedrosfdcarneiro
