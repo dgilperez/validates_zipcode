@@ -33,6 +33,22 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context "Ireland" do
+    it 'does not add errors with a valid postcode' do
+      ['D6W1234', 'A230984', 'D00AV92', 'Y631FHK', 'A000000', 'D44N4X4'].each do |zipcode|
+        record = build_record(zipcode, 'IE')
+        zipcode_should_be_valid(record)
+      end
+    end
+
+    it 'adds errors with an invalid Zipcode' do
+      ['1234', '12345-12345', 'invalid_zip'].each do |zipcode|
+        record = build_record(zipcode, 'IE')
+        zipcode_should_be_invalid(record, zipcode)
+      end
+    end
+  end
+
   context "Argentina" do
     it 'does not add errors with a valid zipcode' do
       record = build_record('C1424CHN', "AR")
