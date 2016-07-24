@@ -23,7 +23,7 @@ module ValidatesZipcode
       NO: /\A\d{4}\z/,
       FI: /\A\d{5}\z/,
       AX: /\A22\d{3}\z/,
-      KR: /\A(\d{5})|(\d{3}[\-]\d{3})\z/,
+      KR: /\A((\d{5})|(\d{3}[\-]\d{3}))\z/,
       CN: /\A\d{6}\z/,
       SG: /\A\d{6}\z/,
       DZ: /\A\d{5}\z/,
