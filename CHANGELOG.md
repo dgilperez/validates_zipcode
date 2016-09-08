@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.13
+
+- Support for new Korea postal codes ~ @adlersantos
+
 ## 0.0.12
 
 - Sweden whitespace made optional ~ @radubatori
