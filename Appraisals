@@ -1,19 +1,19 @@
 appraise "rails-3.2" do
-  gem 'activemodel', branch: '3-2-stable'
+  gem 'activemodel', '~> 3.2.0'
 end
 
 appraise "rails-4.0" do
-  gem "activemodel", branch: '4-0-stable'
+  gem "activemodel", '~> 4.0.0'
 end
 
 appraise "rails-4.1" do
-  gem "activemodel", branch: '4-1-stable'
+  gem "activemodel", '~> 4.1.0'
 end
 
 appraise "rails-4.2" do
-  gem "activemodel", branch: '4-2-stable'
+  gem "activemodel", '~> 4.2.0'
 end
 
 appraise "rails-5.0" do
-  gem "activemodel", branch: '5-0-stable'
+  gem "activemodel", '~> 5.0.0'
 end
