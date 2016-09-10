@@ -1,4 +1,6 @@
 sudo: false
+before_install:
+  - bundle install
 rvm:
   - 1.9.3
   - 2.0.0
