@@ -2,7 +2,7 @@ sudo: false
 
 cache: bundler
 
-script: "bundle exec rake test"
+script: "bundle exec rake"
 
 rvm:
   - 1.9.3
