@@ -1,6 +1,9 @@
 sudo: false
-before_install:
-  - bundle install
+
+cache: bundler
+
+script: "bundle exec rake test"
+
 rvm:
   - 1.9.3
   - 2.0.0
@@ -8,13 +11,16 @@ rvm:
   - 2.2.0
   - 2.2.4
   - 2.3.0
+
 gemfile:
-  - gemfiles/rails_3_2.gemfile
-  - gemfiles/rails_4_0.gemfile
-  - gemfiles/rails_4_1.gemfile
-  - gemfiles/rails_4_2.gemfile
-  - gemfiles/rails_5_0.gemfile
+  - gemfiles/rails_3.2.gemfile
+  - gemfiles/rails_4.0.gemfile
+  - gemfiles/rails_4.1.gemfile
+  - gemfiles/rails_4.2.gemfile
+  - gemfiles/rails_5.0.gemfile
+
 matrix:
+  fast_finish: true
   exclude:
   - rvm: 1.9.3
     gemfile: gemfiles/rails_5_0.gemfile
@@ -24,4 +30,3 @@ matrix:
     gemfile: gemfiles/rails_5_0.gemfile
   - rvm: 2.2.0
     gemfile: gemfiles/rails_5_0.gemfile
-script: "bundle exec rake test"
