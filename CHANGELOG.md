@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.15
+
+- Support for old / new Lithuania postal codes ~ @EricLarch
+
+## 0.0.14
+
+- Support for Rails5 ~ @dgilperez
+
 ## 0.0.13
 
 - Support for new Korea postal codes ~ @adlersantos
