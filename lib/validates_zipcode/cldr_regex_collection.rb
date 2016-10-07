@@ -57,7 +57,7 @@ module ValidatesZipcode
       IS: /\A\d{3}\z/,
       IN: /\A\d{6}\z/,
       ID: /\A\d{5}\z/,
-      IL: /\A\d{5}\z/,
+      IL: /\A\d{5,7}\z/,
       JO: /\A\d{5}\z/,
       KZ: /\A\d{6}\z/,
       KE: /\A\d{5}\z/,
