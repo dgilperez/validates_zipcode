@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.16
+
+- Support for old / new Israel postal codes ~ @EricLarch
+
 ## 0.0.15
 
 - Support for old / new Lithuania postal codes ~ @EricLarch
