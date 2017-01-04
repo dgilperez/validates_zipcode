@@ -10,8 +10,8 @@ describe ValidatesZipcode, '#validate_each' do
     end
 
     it 'adds errors with an invalid Zipcode' do
-      ['124', '12345-12345', 'D0D0D0', '5635', 'invalid_zip'].each do |zipcode|
-        record = build_record(zipcode, 'ES')
+      ['124', '12345-12345', 'D0D0D0', 'invalid_zip'].each do |zipcode|
+        record = build_record(zipcode, 'LU')
         zipcode_should_be_invalid(record, zipcode)
       end
     end
