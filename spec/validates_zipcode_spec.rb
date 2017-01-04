@@ -1,6 +1,22 @@
 require 'spec_helper'
 
 describe ValidatesZipcode, '#validate_each' do
+  context "Luxembourg" do
+    it 'does not add errors with a valid zipcode' do
+      ['L-5635', '5635'].each do |zipcode|
+        record = build_record(zipcode, "LU")
+        zipcode_should_be_valid(record)
+      end
+    end
+
+    it 'adds errors with an invalid Zipcode' do
+      ['124', '12345-12345', 'D0D0D0', 'invalid_zip'].each do |zipcode|
+        record = build_record(zipcode, 'LU')
+        zipcode_should_be_invalid(record, zipcode)
+      end
+    end
+  end
+
   context "Spain" do
     it 'does not add errors with a valid zipcode' do
       record = build_record('93108', "ES")
