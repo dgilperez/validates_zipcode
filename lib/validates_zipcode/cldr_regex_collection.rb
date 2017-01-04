@@ -64,7 +64,7 @@ module ValidatesZipcode
       KW: /\A\d{5}\z/,
       LA: /\A\d{5}\z/,
       LB: /\A(\d{4}([ ]?\d{4})?)?\z/,
-      LU: /\A\d{4}\z/,
+      LU: /\A(L\-)?\d{4}\z/,
       MK: /\A\d{4}\z/,
       MY: /\A\d{5}\z/,
       MV: /\A\d{5}\z/,
