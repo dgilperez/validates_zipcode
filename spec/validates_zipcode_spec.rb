@@ -255,6 +255,27 @@ describe ValidatesZipcode, '#validate_each' do
       zipcode_should_be_invalid(record)
     end
   end
+
+  context 'countries without a zip code system' do
+    context 'Panama' do
+      let(:country_alpha2) { 'PA' }
+
+      it 'does not any errors with any zipcode' do
+        record = build_record('XYZ123', country_alpha2)
+        zipcode_should_be_valid(record)
+      end
+
+      it 'allows empty string as zipcode' do
+        record = build_record('', country_alpha2)
+        zipcode_should_be_valid(record)
+      end
+
+      it 'allows nil as zipcode' do
+        record = build_record(nil, country_alpha2)
+        zipcode_should_be_valid(record)
+      end
+    end
+  end
 end
 
 describe ValidatesZipcode, '.valid?' do
