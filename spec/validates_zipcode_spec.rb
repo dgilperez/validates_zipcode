@@ -135,7 +135,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('2100', 'RS')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '2100')
     end
   end
 
@@ -156,7 +156,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('21006', 'LT')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '21006')
     end
   end
 
@@ -168,7 +168,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('MD-2100', 'MD')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, 'MD-2100')
     end
   end
 
@@ -182,7 +182,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('4500-2500', 'PT')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '4500-2500')
     end
   end
 
@@ -196,7 +196,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('723155', 'BR')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '723155')
     end
   end
 
@@ -210,7 +210,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('723155', 'KR')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '723155')
     end
   end
 
@@ -224,7 +224,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('981 32', 'CZ')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '981 32')
     end
   end
 
@@ -238,7 +238,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('120 00', 'SK')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '120 00')
     end
   end
 
@@ -252,7 +252,7 @@ describe ValidatesZipcode, '#validate_each' do
 
     it 'does not validate with an invalid zipcode' do
       record = build_record('1200', 'IL')
-      zipcode_should_be_invalid(record)
+      zipcode_should_be_invalid(record, '1200')
     end
   end
 
@@ -267,7 +267,25 @@ describe ValidatesZipcode, '#validate_each' do
     it 'does not validate with an invalid zipcode' do
       ['10800', '369', 'A341'].each do |zipcode|
         record = build_record(zipcode, 'PA')
-        zipcode_should_be_invalid(record)
+        zipcode_should_be_invalid(record, zipcode)
+      end
+    end
+  end
+
+  context 'Excluded existing country code' do
+    context 'Panama' do
+      it 'validates with a valid zipcode' do
+        ['0800', '6369'].each do |zipcode|
+          record = build_record(zipcode, 'PA')
+          zipcode_should_be_valid(record, excluded_country_codes: ['PA'])
+        end
+      end
+
+      it 'validates with an invalid zipcode' do
+        ['10800', '369', 'A341'].each do |zipcode|
+          record = build_record(zipcode, 'PA')
+          zipcode_should_be_valid(record, excluded_country_codes: ['PA'])
+        end
       end
     end
   end
@@ -288,17 +306,21 @@ describe ValidatesZipcode, '.valid?' do
     it "is true with an unknown country code -  we don't have all!" do
       expect(ValidatesZipcode.valid?('12345', 'ZZ')).to eq(true)
     end
+
+    it "is true with an excluded country code -  we don't want those to fail and nil is hairy" do
+      expect(ValidatesZipcode.valid?('XXXX!!!XXXX', 'PA', excluded_country_codes: ['PA'])).to eq(true)
+    end
   end
 end
 
-def zipcode_should_be_valid(record)
-  ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
+def zipcode_should_be_valid(record, options = {})
+  ValidatesZipcode::Validator.new(options.merge(attributes: :zipcode)).validate(record)
 
   expect(record.errors).to be_empty
 end
 
-def zipcode_should_be_invalid(record, zipcode = "invalid_zip")
-  ValidatesZipcode::Validator.new(attributes: :zipcode).validate(record)
+def zipcode_should_be_invalid(record, zipcode, options = {})
+  ValidatesZipcode::Validator.new(options.merge(attributes: :zipcode)).validate(record)
 
   expect(record.errors.size).to eq 1
   expect(record.errors.messages[:zipcode]).to include 'Zipcode is invalid'
