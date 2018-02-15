@@ -139,7 +139,9 @@ module ValidatesZipcode
       WF: /\A986\d{2}\z/,
       XK: /\A\d{5}\z/,
       YT: /\A976\d{2}\z/,
-      AE: /\A([a-zA-Z\d\s]){3,}\z/,
+      # NOTE: UAE has no postal codes
+      # https://github.com/dgilperez/validates_zipcode/issues/28
+      # AE: /\A([a-zA-Z\d\s]){3,}\z/,
       AF: /\A\d{4}\z/,
       AL: /\A\d{4}\z/,
       AG: /\A([a-zA-Z\d\s]){3,}\z/,

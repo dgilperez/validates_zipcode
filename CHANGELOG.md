@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.18
+
+- Adds support for `excluded_country_codes` in the validation setup.
+- Remove support for UAE, not reliable sources found, assume not used.
+
 ## 0.0.17
 
 - Updates support for Luxembourg postal codes ~ @rivsc
