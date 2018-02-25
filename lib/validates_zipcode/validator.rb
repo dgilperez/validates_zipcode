@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Usage:
 #
 # class User < ActiveModel
@@ -32,8 +33,8 @@ module ValidatesZipcode
 
       unless ValidatesZipcode::Zipcode.new(options).valid?
         record.errors.add(attribute, :invalid_zipcode, message: I18n.t('errors.messages.invalid_zipcode',
-                                                       value: value,
-                                                       default: 'Zipcode is invalid'))
+          value: value,
+          default: 'Zipcode is invalid'))
       end
     end
   end
