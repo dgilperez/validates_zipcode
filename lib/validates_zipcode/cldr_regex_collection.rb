@@ -185,7 +185,7 @@ module ValidatesZipcode
       HN: /\A(([a-zA-Z]){2}|\d{2})\d{4}\z/,
       IO: /\A\d{5}\z/,
       IR: /\A\d{5}\z/,
-      JP: /\A\d{7}\z/,
+      JP: /\A\d{3}\-?\d{4}\z/,
       JM: /\A(JM)[A-Z]{3}\d{2}\z/,
       KI: /\A([a-zA-Z\d\s]){3,}\z/,
       KN: /\A([a-zA-Z\d\s]){3,8}\z/,
