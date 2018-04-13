@@ -263,6 +263,31 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  ['UK', 'GB'].each do |cc|
+    context cc do
+      it 'validates with a valid zipcode' do
+        [
+          'ID1 1QD',
+          'M32 0JG',
+          'NE30 1DP',
+          'OX49 5NU',
+          'SW1A 2AA',
+          'W1K 7DA'
+        ].each do |zipcode|
+          record = build_record(zipcode, cc)
+          zipcode_should_be_valid(record)
+        end
+      end
+
+      it 'does not validate with an invalid zipcode' do
+        [nil, '', 'nope', 'id1 1qd', 'Sw1A 2aA'].each do |zipcode|
+          record = build_record(zipcode, cc)
+          zipcode_should_be_invalid(record, nil)
+        end
+      end
+    end
+  end
+
   context 'USA' do
     it 'does not add errors with a valid zipcode' do
       record = build_record('93108', 'US')
