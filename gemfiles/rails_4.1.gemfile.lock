@@ -1,5 +1,5 @@
 PATH
-  remote: ../
+  remote: ..
   specs:
     validates_zipcode (0.0.19)
       activemodel (>= 3.2.0)
@@ -23,7 +23,7 @@ GEM
     builder (3.2.2)
     diff-lcs (1.2.5)
     i18n (0.7.0)
-    json (1.8.3)
+    json (1.8.5)
     minitest (5.9.0)
     rake (11.2.2)
     rspec (3.5.0)
@@ -56,4 +56,4 @@ DEPENDENCIES
   validates_zipcode!
 
 BUNDLED WITH
-   1.13.6
+   1.15.4
