@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## unversioned
+## 0.0.20
 
 - Merge UK and GB regex, using official regex provided by gob.uk ~ @Onumis @dgilperez
 
