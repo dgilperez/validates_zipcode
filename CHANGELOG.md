@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## unversioned
+
+- Merge UK and GB regex, using official regex provided by gob.uk ~ @Onumis @dgilperez
+
 ## 0.0.19
 
 - Fixes JP and IE formats, thanks to ~ @timokleemann

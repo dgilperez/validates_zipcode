@@ -272,7 +272,9 @@ describe ValidatesZipcode, '#validate_each' do
           'NE30 1DP',
           'OX49 5NU',
           'SW1A 2AA',
-          'W1K 7DA'
+          'W1K 7DA',
+          'id1 1qd',
+          'Sw1A 2aA'
         ].each do |zipcode|
           record = build_record(zipcode, cc)
           zipcode_should_be_valid(record)
@@ -280,7 +282,7 @@ describe ValidatesZipcode, '#validate_each' do
       end
 
       it 'does not validate with an invalid zipcode' do
-        [nil, '', 'nope', 'id1 1qd', 'Sw1A 2aA'].each do |zipcode|
+        [nil, '', 'nope', 'id11qd', 'SW1A2AA'].each do |zipcode|
           record = build_record(zipcode, cc)
           zipcode_should_be_invalid(record, nil)
         end
