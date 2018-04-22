@@ -95,7 +95,7 @@ describe ValidatesZipcode, '#validate_each' do
   context 'Ireland' do
     it 'does not add errors with a valid postcode - old format' do
       ['D02 AF30', 'X91 PK81', 'V94 H2PP', 'D07 R6YE', 'D6W1234',
-        'A230984', 'D00AV92', 'Y631FHK', 'A000000', 'D44N4X4'].each do |zipcode|
+       'A230984', 'D00AV92', 'Y631FHK', 'A000000', 'D44N4X4'].each do |zipcode|
         record = build_record(zipcode, 'IE')
         zipcode_should_be_valid(record)
       end
@@ -263,7 +263,7 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
-  ['UK', 'GB'].each do |cc|
+  %w[UK GB].each do |cc|
     context cc do
       it 'validates with a valid zipcode' do
         [

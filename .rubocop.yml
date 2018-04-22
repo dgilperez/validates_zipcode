@@ -14,6 +14,7 @@ AllCops:
   # Include common Ruby source files.
   Include:
     - '**/*.gemspec'
+    - '**/*.gemfile'
     - '**/*.podspec'
     - '**/*.jbuilder'
     - '**/*.rake'
@@ -386,16 +387,6 @@ Layout/EmptyLinesAroundModuleBody:
     - empty_lines
     - no_empty_lines
 
-# Checks whether the source file has a utf-8 encoding comment or not
-# AutoCorrectEncodingComment must match the regex
-# /#.*coding\s?[:=]\s?(?:UTF|utf)-8/
-Style/Encoding:
-  EnforcedStyle: when_needed
-  SupportedStyles:
-    - when_needed
-    - always
-  AutoCorrectEncodingComment: '# encoding: utf-8'
-
 Style/FileName:
   # File names listed in AllCops:Include are excluded by default. Add extra
   # excludes here.
@@ -474,9 +465,6 @@ Style/HashSyntax:
     - hash_rockets
 # Force hashes that have a symbol value to use hash rockets
   UseHashRocketsWithSymbolValues: false
-
-Style/IfUnlessModifier:
-  MaxLineLength: 80
 
 Layout/IndentationConsistency:
   # The difference between `rails` and `normal` is that the `rails` style
@@ -712,7 +700,18 @@ Layout/TrailingBlankLines:
     - final_newline
     - final_blank_line
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  # If EnforcedStyleForMultiline is comma, the cop requires a comma after the
+  # last item of a list, but only for lists where each item is on its own line.
+  # If EnforcedStyleForMultiline is consistent_comma, the cop requires a comma
+  # after the last item of a list, for all lists.
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+
+Style/TrailingCommaInHashLiteral:
   # If EnforcedStyleForMultiline is comma, the cop requires a comma after the
   # last item of a list, but only for lists where each item is on its own line.
   # If EnforcedStyleForMultiline is consistent_comma, the cop requires a comma
@@ -781,9 +780,6 @@ Style/VariableName:
   SupportedStyles:
     - snake_case
     - camelCase
-
-Style/WhileUntilModifier:
-  MaxLineLength: 80
 
 Style/WordArray:
   MinSize: 0
