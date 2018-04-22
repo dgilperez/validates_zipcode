@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'validates_zipcode/version'
 
@@ -25,6 +25,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'bundler', '~> 1.6'
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rake', '~> 12.2.1'
   s.add_development_dependency 'rspec'
 end
