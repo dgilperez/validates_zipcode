@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    validates_zipcode (0.1.0)
+    validates_zipcode (0.1.1)
       activemodel (>= 3.2.0)
 
 GEM
@@ -56,4 +56,4 @@ DEPENDENCIES
   validates_zipcode!
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

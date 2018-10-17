@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.1.1
+
+- Relaxes UK / GB regex to support codes without whitespace. Fixes backward compatibility breaking in 0.0.20. ~ Thanks to @tom-lord
+
 ## 0.1.0
 
 - Dropped support for Rails 4.0 and 4.1 and for older minor Ruby 2 versions. This means those versions or combinations will not be tested, they may still work but will not receive support. This change could potentially break some apps in the future. Also, gem is stable enough to merit a minor version. Hence, 0.1.0 is here.
@@ -9,7 +13,7 @@ All notable changes to this project will be documented in this file.
 
 ## 0.0.20
 
-- Merge UK and GB regex, using official regex provided by gob.uk ~ @Onumis @dgilperez
+- Merge UK and GB regex, using official regex provided by gob.uk. Breaks compatibility for codes without whitespace ~ @Onumis @dgilperez
 
 ## 0.0.19
 
