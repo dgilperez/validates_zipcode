@@ -263,6 +263,20 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context 'Taiwan' do
+    it 'validates with a valid zipcode' do
+      ['833', '74144'].each do |zipcode|
+        record = build_record(zipcode, 'TW')
+        zipcode_should_be_valid(record)
+      end
+    end
+
+    it 'does not validate with an invalid zipcode' do
+      record = build_record('4329', 'TW')
+      zipcode_should_be_invalid(record, '4329')
+    end
+  end
+
   %w[UK GB].each do |cc|
     context cc do
       it 'validates with a valid zipcode' do
