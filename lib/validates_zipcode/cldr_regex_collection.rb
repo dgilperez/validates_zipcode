@@ -232,7 +232,7 @@ module ValidatesZipcode
       TO: /\A([a-zA-Z\d\s]){3,}\z/,
       TZ: /\A([a-zA-Z\d\s]){3,}\z/,
       TT: /\A\d{6}\z/,
-      TW: /\A\d{3}\z/,
+      TW: /\A\d{3}(\d{2})?\z/,
       UG: /\A([a-zA-Z\d\s]){3,}\z/,
       UM: /\A([a-zA-Z\d\s]){3,}\z/,
       UY: /\A([a-zA-Z\d\s]){3,}\z/,
