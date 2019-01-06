@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.0
+
+- Dropped support for Rails 3.2, 4.0, 4.1 and Ruby 1.9.3. This means those versions or combinations may still work for you, but they will not be tested nor receive support.
+- Added support for Rails 6.0. Yeehaw!
+- Support for Taiwan 5-digit codes, thanks to ~ @ThomasChiesa
+
 ## 0.1.1
 
 - Relaxes UK / GB regex to support codes without whitespace. Fixes backward compatibility breaking in 0.0.20. ~ Thanks to @tom-lord
