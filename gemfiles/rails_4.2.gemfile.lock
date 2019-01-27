@@ -50,10 +50,10 @@ PLATFORMS
 DEPENDENCIES
   activemodel (~> 4.2.0)
   appraisal
-  bundler (~> 1.6)
+  bundler
   rake (~> 12.2.1)
   rspec
   validates_zipcode!
 
 BUNDLED WITH
-   1.17.3
+   2.0.1
