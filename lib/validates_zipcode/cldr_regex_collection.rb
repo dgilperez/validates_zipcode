@@ -77,7 +77,7 @@ module ValidatesZipcode
       MX: /\A\d{5}\z/,
       MA: /\A\d{5}\z/,
       NZ: /\A\d{4}\z/,
-      NI: /\A((\d{4}-)?\d{3}-\d{3}(-\d{1})?)?\z/,
+      NI: /\A\d{5}\z/,
       NG: /\A(\d{6})?\z/,
       OM: /\A(PC )?\d{3}\z/,
       PK: /\A\d{5}\z/,
