@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.1
+
+- Fixes NI postal code format ~ Daniel Olivares
+
 ## 0.2.0
 
 - Dropped support for Rails 3.2, 4.0, 4.1 and Ruby 1.9.3 and Ruby less than Ruby 2.3. This means those versions or combinations may still work for you, but they will not be tested nor receive support.
