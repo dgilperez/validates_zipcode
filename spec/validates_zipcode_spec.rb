@@ -324,6 +324,23 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context 'Nicaragua' do
+    it 'validates with a valid zipcode' do
+      # @see https://en.wikipedia.org/wiki/Postal_codes_in_Nicaragua
+      ['11002', '11034'].each do |zipcode|
+        record = build_record(zipcode, 'NI')
+        zipcode_should_be_valid(record)
+      end
+    end
+
+    it 'does not validate with an invalid zipcode' do
+      ['1002', '111034'].each do |zipcode|
+        record = build_record(zipcode, 'NI')
+        zipcode_should_be_invalid(record, zipcode)
+      end
+    end
+  end
+
   context 'unknown country' do
     it 'does not add errors with a any zipcode' do
       record = build_record('A1J2Z9', 'ZZ')
