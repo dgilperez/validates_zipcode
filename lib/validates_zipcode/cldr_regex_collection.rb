@@ -196,7 +196,7 @@ module ValidatesZipcode
       LI: /\A\d{4}\z/,
       LV: /\A([a-zA-Z]|\d){3,8}\z/,
       LY: /\A\d{5}\z/,
-      LT: /\A([a-zA-Z]){2}(-)\d{4,5}\z/,
+      LT: /\A(([a-zA-Z]){2}(-))?\d{4,5}\z/,
       LC: /\A([a-zA-Z\d\s]){3,}\z/,
       MC: /\A\d{5}\z/,
       MD: /\A(([a-zA-Z]){2})(|\s)\d{4}\z/,
