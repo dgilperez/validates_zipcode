@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.2
+
+- Fixes LT postal code format ~ @tmeckhoff
+
 ## 0.2.1
 
 - Fixes NI postal code format ~ Daniel Olivares
