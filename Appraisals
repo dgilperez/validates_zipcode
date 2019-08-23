@@ -8,6 +8,10 @@ appraise 'rails-5.2' do
   gem 'activemodel', '~> 5.2.0'
 end
 
+appraise 'rails-6.0' do
+  gem 'activemodel', '~> 5.2.0'
+end
+
 appraise 'rails_edge' do
   gem 'activemodel', github: 'rails/rails'
 end
