@@ -13,10 +13,10 @@ before_install:
 script: "bundle exec rake"
 
 rvm:
-  - 2.3.7
-  - 2.4.4
-  - 2.5.3
-  - 2.6.0
+  - 2.4.9
+  - 2.5.7
+  - 2.6.5
+  - 2.7.0
   - ruby-head
   - truffleruby
 
@@ -31,17 +31,7 @@ matrix:
   allow_failures:
     - rvm: ruby-head
   exclude:
-    - rvm: 2.2.10
-      gemfile: gemfiles/rails_5.2.gemfile
-    - rvm: 2.2.10
+    - rvm: 2.4.9
       gemfile: gemfiles/rails_6.gemfile
-    - rvm: 2.3.7
-      gemfile: gemfiles/rails_6.gemfile
-    - rvm: 2.4.4
-      gemfile: gemfiles/rails_6.gemfile
-    - rvm: 2.2.10
-      gemfile: gemfiles/rails_edge.gemfile
-    - rvm: 2.3.7
-      gemfile: gemfiles/rails_edge.gemfile
-    - rvm: 2.4.4
+    - rvm: 2.4.9
       gemfile: gemfiles/rails_edge.gemfile

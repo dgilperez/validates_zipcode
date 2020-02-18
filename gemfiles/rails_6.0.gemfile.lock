@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    validates_zipcode (0.2.2)
+    validates_zipcode (0.2.3)
       activemodel (>= 3.2.0)
 
 GEM

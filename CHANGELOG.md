@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.3
+
+- Fixes MU postal code format ~ @thrasherDGK
+
 ## 0.2.2
 
 - Fixes LT postal code format ~ @tmeckhoff
