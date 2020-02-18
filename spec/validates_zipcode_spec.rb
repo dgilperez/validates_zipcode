@@ -171,6 +171,22 @@ describe ValidatesZipcode, '#validate_each' do
     end
   end
 
+  context 'Mauritius' do
+    it 'validates with a valid zipcode' do
+      %w[42602 A2101 r6414].each do |zipcode|
+        record = build_record(zipcode, 'MU')
+        zipcode_should_be_valid(record)
+      end
+    end
+
+    it 'does not validate with an invalid zipcode' do
+      %w[05678 B4242].each do |zipcode|
+        record = build_record(zipcode, 'MU')
+        zipcode_should_be_invalid(record, zipcode)
+      end
+    end
+  end
+
   context 'Moldova' do
     it 'validates with a valid zipcode' do
       record = build_record('MD2001', 'MD')
