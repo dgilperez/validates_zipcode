@@ -73,7 +73,7 @@ module ValidatesZipcode
       MY: /\A\d{5}\z/,
       MV: /\A\d{5}\z/,
       MT: /\A[A-Z]{3}[ ]?\d{2,4}\z/,
-      MU: /\A[ARar|1-9]\d{4}\z/,
+      MU: /\A[ARar\d]\d{4}\z/,
       MX: /\A\d{5}\z/,
       MA: /\A\d{5}\z/,
       NZ: /\A\d{4}\z/,
