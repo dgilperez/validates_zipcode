@@ -194,7 +194,7 @@ module ValidatesZipcode
       KN: /\A([a-zA-Z\d\s]){3,8}\z/,
       KP: /\A([a-zA-Z\d\s]){3,8}\z/,
       LI: /\A\d{4}\z/,
-      LV: /\A([a-zA-Z]|\d){3,8}\z/,
+      LV: /\A(LV)?\-?\d{4}\z/,
       LY: /\A\d{5}\z/,
       LT: /\A(LT-)?\d{5}\z/,
       LC: /\A([a-zA-Z\d\s]){3,}\z/,
