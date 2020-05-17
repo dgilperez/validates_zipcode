@@ -16,6 +16,11 @@ module ValidatesZipcode
     end
     alias_method :validate, :valid?
 
+    def format
+      raise InvalidZipcodeError, "invalid zipcode #{@zipcode} for country #{@country_alpha2.to_s.upcase}" unless valid?
+      Formatter.new(zipcode: @zipcode, country_alpha2: @country_alpha2).format
+    end
+
     private
 
     def regexp
