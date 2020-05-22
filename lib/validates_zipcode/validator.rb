@@ -32,7 +32,7 @@ module ValidatesZipcode
                   excluded_country_codes: @excluded_country_codes }
 
       unless ValidatesZipcode::Zipcode.new(options).valid?
-        message = @message || I18n.t("errors.messages.invalid_zipcode", value: value, default: "Zipcode is invalid")
+        message = @message || I18n.t('errors.messages.invalid_zipcode', value: value, default: 'Zipcode is invalid')
         record.errors.add(attribute, :invalid_zipcode, message: message)
       end
     end
