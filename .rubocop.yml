@@ -5,9 +5,12 @@ inherit_from:
 #  - enabled.yml
 #  - disabled.yml
 
+require:
+- rubocop-rails
+
 # Common configuration.
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
 
   TargetRailsVersion: 4.2
 
@@ -58,7 +61,7 @@ Layout/AccessModifierIndentation:
     - indent
 
 # Align the elements of a hash literal if they span more than one line.
-Layout/AlignHash:
+Layout/HashAlignment:
   # Alignment of entries using hash rocket as separator. Valid values are:
   #
   # key - left alignment of keys
@@ -126,7 +129,7 @@ Layout/AlignHash:
 Style/Alias:
   Enabled: false
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   # Alignment of parameters in multi-line method calls.
   #
   # The `with_first_parameter` style aligns the following lines along the same
@@ -226,20 +229,6 @@ Style/BlockDelimiters:
     - lambda
     - proc
     - it
-
-Style/BracesAroundHashParameters:
-  EnforcedStyle: no_braces
-  SupportedStyles:
-    # The `braces` style enforces braces around all method parameters that are
-    # hashes.
-    - braces
-    # The `no_braces` style checks that the last parameter doesn't have braces
-    # around it.
-    - no_braces
-    # The `context_dependent` style checks that the last parameter doesn't have
-    # braces around it, but requires braces if the second to last parameter is
-    # also a hash literal.
-    - context_dependent
 
 # Indentation of `when`.
 Layout/CaseIndentation:
@@ -387,25 +376,18 @@ Layout/EmptyLinesAroundModuleBody:
     - empty_lines
     - no_empty_lines
 
-Style/FileName:
+Naming/FileName:
   # File names listed in AllCops:Include are excluded by default. Add extra
   # excludes here.
   Exclude: []
 
 Layout/FirstParameterIndentation:
-  EnforcedStyle: special_for_inner_method_call_in_parentheses
+  EnforcedStyle: consistent
   SupportedStyles:
     # The first parameter should always be indented one step more than the
     # preceding line.
     - consistent
-    # The first parameter should normally be indented one step more than the
-    # preceding line, but if it's a parameter for a method call that is itself
-    # a parameter in a method call, then the inner parameter should be indented
-    # relative to the inner method.
-    - special_for_inner_method_call
-    # Same as special_for_inner_method_call except that the special rule only
-    # applies if the outer method call encloses its arguments in parentheses.
-    - special_for_inner_method_call_in_parentheses
+    - align_parentheses
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
@@ -439,11 +421,9 @@ Style/FormatStringToken:
     - template
 
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: when_needed
+  EnforcedStyle: always
   SupportedStyles:
-    # `when_needed` will add the frozen string literal comment to files
-    # only when the `TargetRubyVersion` is set to 2.3+.
-    - when_needed
+    - always_true
     # `always` will always add the frozen string literal comment to a file
     # regardless of the Ruby version or if `freeze` or `<<` are called on a
     # string literal. If you run code against multiple versions of Ruby, it is
@@ -483,7 +463,7 @@ Layout/IndentationWidth:
   Width: 2
 
 # Checks the indentation of the first key in a hash literal.
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   # The value `special_inside_parentheses` means that hash literals with braces
   # that have their opening brace on the same line as a surrounding opening
   # round parenthesis, shall have their first key indented relative to the
@@ -532,7 +512,7 @@ Style/MethodDefParentheses:
     - require_parentheses
     - require_no_parentheses
 
-Style/MethodName:
+Naming/MethodName:
   EnforcedStyle: snake_case
   SupportedStyles:
     - snake_case
@@ -569,14 +549,14 @@ Style/PercentQLiterals:
     - lower_case_q # Use %q when possible, %Q when necessary
     - upper_case_q # Always use %Q
 
-Style/PredicateName:
+Naming/PredicateName:
   # Predicate name prefices.
   NamePrefix:
     - is_
     - has_
     - have_
   # Predicate name prefices that should be removed.
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
     - is_
     - has_
     - have_
@@ -694,7 +674,7 @@ Style/SymbolProc:
   IgnoredMethods:
     - respond_to
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   EnforcedStyle: final_newline
   SupportedStyles:
     - final_newline
@@ -756,7 +736,7 @@ Style/TrivialAccessors:
   # Commonly used in DSLs
   AllowDSLWriters: false
   IgnoreClassMethods: false
-  Whitelist:
+  AllowedMethods:
     - to_ary
     - to_a
     - to_c
@@ -775,7 +755,7 @@ Style/TrivialAccessors:
     - to_s
     - to_sym
 
-Style/VariableName:
+Naming/VariableName:
   EnforcedStyle: snake_case
   SupportedStyles:
     - snake_case
@@ -825,7 +805,7 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 # Second-wave metric. Disabled now to prevent noise.
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
   Max: 120
   # To make it possible to copy or click on URIs in the code, we allow lines
@@ -856,7 +836,7 @@ Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
 # Align ends correctly.
-Lint/EndAlignment:
+Layout/EndAlignment:
   # The value `keyword` means that `end` should be aligned with the matching
   # keyword (if, while, etc.).
   # The value `variable` means that in assignments, `end` should be aligned
@@ -869,7 +849,7 @@ Lint/EndAlignment:
     - start_of_line
   AutoCorrect: false
 
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   # The value `def` means that `end` should be aligned with the def keyword.
   # The value `start_of_line` means that `end` should be aligned with method
   # calls like `private`, `public`, etc, if present in front of the `def`

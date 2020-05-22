@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 require 'spec_helper'
 
+# NOTE: Spain has the full case specs.
+#       Do not apply all checks to all countries for suite speed.
 describe ValidatesZipcode, '#validate_each' do
   context 'Argentina' do
     it 'does not add errors with a valid zipcode' do
@@ -265,6 +267,8 @@ describe ValidatesZipcode, '#validate_each' do
       ['1234', '12345-12345', 'D0D0D0', 'invalid_zip'].each do |zipcode|
         record = build_record(zipcode, 'ES')
         zipcode_should_be_invalid(record, zipcode)
+        record.errors.clear
+        zipcode_should_be_invalid_with_custom_message(record, zipcode)
       end
     end
   end
@@ -420,6 +424,14 @@ def zipcode_should_be_invalid(record, _zipcode, options = {})
 
   expect(record.errors.size).to eq 1
   expect(record.errors.messages[:zipcode]).to include 'Zipcode is invalid'
+end
+
+def zipcode_should_be_invalid_with_custom_message(record, _zipcode, options = {})
+  custom_message = 'is really wrong'
+  ValidatesZipcode::Validator.new(options.merge(attributes: :zipcode, message: custom_message)).validate(record)
+
+  expect(record.errors.size).to eq 1
+  expect(record.errors.messages[:zipcode]).to include custom_message
 end
 
 def build_record(zipcode, country_alpha2)

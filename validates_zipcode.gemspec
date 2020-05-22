@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'validates_zipcode/version'
 
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files -z`.split("\x0")
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
-  s.require_paths = ['lib']
+  s.require_paths = %w[lib]
 
   s.required_ruby_version = '>= 1.9.3'
 
@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake', '~> 12.2.1'
+  s.add_development_dependency 'rake', '>= 12.3.3'
   s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'rubocop-rails'
 end

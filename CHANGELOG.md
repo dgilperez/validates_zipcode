@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.5
+
+- Allows for a custom message passed to the validator ~ @andychongyz
+
 ## 0.2.4
 
 - Fixes LV postal code format
