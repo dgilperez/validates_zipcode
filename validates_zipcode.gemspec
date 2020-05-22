@@ -25,6 +25,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake', '~> 12.2.1'
+  s.add_development_dependency 'rake', '>= 12.3.3'
   s.add_development_dependency 'rspec'
 end
