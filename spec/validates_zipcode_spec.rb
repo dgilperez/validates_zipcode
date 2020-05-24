@@ -413,6 +413,16 @@ describe ValidatesZipcode, '.valid?' do
   end
 end
 
+describe ValidatesZipcode, '.format' do
+  it "formats valid zipcodes" do
+    expect(ValidatesZipcode.format('Ka9 2dj', 'UK')).to eq('KA9 2DJ')
+  end
+
+  it "raises for invalid zipcodes" do
+    expect { ValidatesZipcode.format('KA9 1tr', 'DE') }.to raise_error(ValidatesZipcode::InvalidZipcodeError)
+  end
+end
+
 def zipcode_should_be_valid(record, options = {})
   ValidatesZipcode::Validator.new(options.merge(attributes: :zipcode)).validate(record)
 

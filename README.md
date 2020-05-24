@@ -9,8 +9,9 @@ Adds zipcode / postal code validation support to Rails (ActiveModel), considerin
 ## Installation
 
 Add this line to your application's Gemfile:
-
-    gem 'validates_zipcode'
+```ruby
+gem 'validates_zipcode'
+```
 
 And then execute:
 
@@ -22,23 +23,56 @@ Or install it yourself as:
 
 ## Usage
 
-    validates_zipcode :zipcode
+### With ActiveModel::Validations
 
-    validates :zipcode, zipcode: true
+```ruby
+validates_zipcode :zipcode
+
+validates :zipcode, zipcode: true
+```
 
 ``ValidatesZipcode`` expects the model to have an attribute called ``country_alpha2`` to contain the country code.
 You can provide your own country_code using ``:country_code`` option, or specify which attribute contains this information
 using ``:country_code_attribute`` option.
 
-    validates :zipcode, zipcode: { country_code: :es }
+```ruby
+validates :zipcode, zipcode: { country_code: :es }
 
-    validates :zipcode, zipcode: { country_code_attribute: :my_country_code_column }
+validates :zipcode, zipcode: { country_code_attribute: :my_country_code_column }
+```
 
 If you need to localize the error message, just add this to your I18n locale file:
 
-    errors:
-      messages:
-        invalid_zipcode: Your zipcode error message.
+```yaml
+errors:
+  messages:
+    invalid_zipcode: Your zipcode error message.
+```
+
+### Without ActiveModel::Validations
+
+```ruby
+ValidatesZipcode.valid?('93108', 'ES')
+# => true
+```
+
+### Formatting
+
+This gem can also be used for formatting zipcodes according to country specific rules.
+
+```ruby
+ValidatesZipcode.format('Sw1A 2aA', 'UK')
+# => 'SW1A 2AA'
+```
+
+If the zipcode is not valid an exception is raised.
+
+```ruby
+ValidatesZipcode.format('Sw1A 2aA', 'FR')
+# => raises ValidatesZipcode::InvalidZipcodeError
+```
+
+At the moment not every country is supported. See [lib/validates_zipcode/formatter.rb](lib/validates_zipcode/formatter.rb) to find all available countries.
 
 ## Contributing
 
