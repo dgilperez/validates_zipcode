@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## 0.3.0
 
 - Adds zipcode formatting feature ~ @aiomaster
+- Drops support for EoL Rails < 4.2 and Ruby < 2.4. ~ @dgilperez
 
 ## 0.2.5
 

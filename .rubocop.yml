@@ -10,7 +10,7 @@ require:
 
 # Common configuration.
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.4
 
   TargetRailsVersion: 4.2
 
