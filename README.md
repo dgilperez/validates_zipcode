@@ -51,6 +51,12 @@ errors:
     invalid_zipcode: Your zipcode error message.
 ```
 
+You can override this on a per-model basis by passing in a ``:message`` key with the validation:
+
+```ruby
+validates :zipcode, zipcode: { message: 'Your per-model zipcode error message.' }
+```
+
 ### Without ActiveModel::Validations
 
 ```ruby
