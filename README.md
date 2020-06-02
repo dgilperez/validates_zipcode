@@ -41,12 +41,20 @@ validates :zipcode, zipcode: { country_code: :es }
 validates :zipcode, zipcode: { country_code_attribute: :my_country_code_column }
 ```
 
+#### Error Messaging
+
 If you need to localize the error message, just add this to your I18n locale file:
 
 ```yaml
 errors:
   messages:
     invalid_zipcode: Your zipcode error message.
+```
+
+You can override this on a per-model basis by passing in a ``:message`` key with the validation:
+
+```ruby
+validates :zipcode, zipcode: { message: 'Your per-model zipcode error message.' }
 ```
 
 ### Without ActiveModel::Validations
