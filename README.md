@@ -41,6 +41,8 @@ validates :zipcode, zipcode: { country_code: :es }
 validates :zipcode, zipcode: { country_code_attribute: :my_country_code_column }
 ```
 
+#### Error Messaging
+
 If you need to localize the error message, just add this to your I18n locale file:
 
 ```yaml
