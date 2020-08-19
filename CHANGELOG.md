@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.3.1
+
+- Removes forbidden combinations in the Netherlands ~ @gerard76
+
 ## 0.3.0
 
 - Adds zipcode formatting feature ~ @aiomaster
