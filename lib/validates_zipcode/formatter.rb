@@ -1,12 +1,15 @@
 module ValidatesZipcode
   class Formatter
 
+    WORD_CHAR_AND_DIGIT = /[A-Z0-9]/
+
     ZIPCODES_TRANSFORMATIONS = {
       AT: ->(z) { z.scan(/\d/).join },
+      CA: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(3, ' ').join },
       CZ: ->(z) { z.scan(/\d/).insert(3, ' ').join },
       DE: ->(z) { z.scan(/\d/).join.rjust(5, "0") },
-      GB: ->(z) { z.upcase.scan(/[A-Z0-9]/).insert(-4, ' ').join },
-      NL: ->(z) { z.upcase.scan(/[A-Z0-9]/).insert(4, ' ').join },
+      GB: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(-4, ' ').join },
+      NL: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(4, ' ').join },
       PL: ->(z) { z.scan(/\d/).insert(2, '-').join },
       SK: :CZ,
       UK: :GB,
