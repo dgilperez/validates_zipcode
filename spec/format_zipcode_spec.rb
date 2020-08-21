@@ -2,6 +2,12 @@
 require 'spec_helper'
 
 describe ValidatesZipcode::Formatter, '#format' do
+  context 'Canada' do
+    it { check_format('CA', 'l3b3z6' => 'L3B 3Z6') }
+    it { check_format('ca', 'V2r-1c8' => 'V2R 1C8') }
+    it { check_format(:ca, 'g9a 5w1' => 'G9A 5W1') }
+  end
+
   context 'Czech' do
     it { check_format('CZ', '12000' => '120 00') }
     it { check_format(:cz, '721 00' => '721 00') }
