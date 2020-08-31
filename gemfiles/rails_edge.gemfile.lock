@@ -14,7 +14,7 @@ GIT
 PATH
   remote: ..
   specs:
-    validates_zipcode (0.3.2)
+    validates_zipcode (0.3.3)
       activemodel (>= 4.2.0)
 
 GEM
