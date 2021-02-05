@@ -21,7 +21,7 @@ module ValidatesZipcode
       CH: /\A\d{4}\z/,
       AT: /\A\d{4}\z/,
       ES: /\A\d{5}\z/,
-      NL: /\A[1-9]\d{3}[ ]?(?!SA|SD|SS)[A-Z]{2}\z/,
+      NL: /\A[1-9]\d{3}[ ]?[A-RT-Z][BCE-RT-Z]\z/,
       BE: /\A\d{4}\z/,
       DK: /\A\d{4}\z/,
       NO: /\A\d{4}\z/,
