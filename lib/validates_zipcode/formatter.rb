@@ -13,6 +13,13 @@ module ValidatesZipcode
       PL: ->(z) { z.scan(/\d/).insert(2, '-').join },
       SK: :CZ,
       UK: :GB,
+      MT: :GB,
+      FK: :GB,
+      GS: :GB,
+      PN: :GB,
+      SH: :GB,
+      TC: :GB,
+      GI: :GB,
       US: ->(z) {
         digits = z.scan(/\d/)
         digits.insert(5, '-') if digits.count > 5
