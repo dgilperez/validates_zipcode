@@ -17,6 +17,10 @@ module ValidatesZipcode
     build_zipcode(*args).format
   end
 
+  def self.generate(*args)
+    build_zipcode(nil, *args).generate
+  end
+
   def self.build_zipcode(zipcode, country_alpha2, options = {})
     ValidatesZipcode::Zipcode.new(options.merge(zipcode: zipcode, country_alpha2: country_alpha2))
   end
