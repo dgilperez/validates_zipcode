@@ -82,6 +82,23 @@ ValidatesZipcode.format('Sw1A 2aA', 'FR')
 
 At the moment not every country is supported. See [lib/validates_zipcode/formatter.rb](lib/validates_zipcode/formatter.rb) to find all available countries.
 
+### Test data
+
+In order to generate test data, we suggest using the [regexp-examples gem](https://github.com/tom-lord/regexp-examples)
+This dependency will allow you to create examples as follows:
+
+```ruby
+require "regexp-examples"
+
+ValidatesZipcode::CldrRegexpCollection::ZIPCODES_REGEX[:ES].examples
+
+# => ["00000", "00001", "00002", "00003", ..., "44443", "44444"]
+
+ValidatesZipcode::CldrRegexpCollection::ZIPCODES_REGEX[:ES].random_example
+
+# => "27072"
+```
+
 ## Contributing
 
 1. Fork it
