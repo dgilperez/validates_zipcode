@@ -4,7 +4,7 @@ require 'spec_helper'
 # NOTE: Spain has the full case specs.
 #       Do not apply all checks to all countries for suite speed.
 describe ValidatesZipcode, '#validate_each' do
-  ValidatesZipcode::CldrRegexpCollection::ZIPCODE_VALUES.each do |country_code, values|
+  TEST_DATA.each do |country_code, values|
     context country_code do
       context 'validates with valid zipcodes' do
         values[:valid].each do |zipcode|

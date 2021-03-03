@@ -21,18 +21,10 @@ module ValidatesZipcode
       Formatter.new(zipcode: @zipcode, country_alpha2: @country_alpha2).format
     end
 
-    def generate
-      values[:valid].sample
-    end
-
     private
 
     def regexp
       @regexp ||= regexp_for_country_alpha2(@country_alpha2)
-    end
-
-    def values
-      @values ||= values_for_country_alpha2(@country_alpha2)
     end
   end
 end
