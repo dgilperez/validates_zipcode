@@ -193,7 +193,7 @@ module ValidatesZipcode
       IR: /\A\d{5}\z/,
       JP: /\A\d{3}\-?\d{4}\z/,
       # https://en.youbianku.com/Jamaica#:~:text=Jamaica%20has%20no%20postcode%20system,the%20name%20of%20the%20town.
-      JM: /\A((JM)(DCN|CHR|AKN|DMR|BPD|AAW|CAN|ACE|DEH|CJS|BMY|BTS|CTY|DWD)(0[1-9]|(1|2)[0-9]|3[1-9]))\z/i,
+      JM: /\A((JM)(DCN|CHR|AKN|DMR|BPD|AAW|CAN|ACE|DEH|CJS|BMY|BTS|CTY|DWD)(0[1-9]|(1|2)[0-9]))\z/i,
       KI: /\A(KI)\d{4}\z/i,
       KN: /\A(KN)\d{4}\z/i,
       KP: /\A([A-Z\d\s]){3,8}\z/i,

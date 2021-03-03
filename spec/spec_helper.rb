@@ -2692,6 +2692,7 @@ TEST_DATA = {
       'invalid_zip',
       'JMDEH00',
       'JMDWD30',
+      'JMDWD31',
       'JMDCN91',
       'JMXYZ05',
     ]
