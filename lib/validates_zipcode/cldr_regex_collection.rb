@@ -36,7 +36,7 @@ module ValidatesZipcode
       AM: /\A(37)?\d{4}\z/,
       BH: /\A(1[0-2]|[1-9])\d{2}\z/,
       BD: /\A\d{4}\z/,
-      BB: /\A(BB)\d{5}\z/,
+      BB: /\ABB([1-2]\d{4}|15156667)\z/,
       BY: /\A\d{6}\z/,
       BM: /\A[A-Z]{2}[ ]?[A-Z0-9]{2}\z/,
       BA: /\A\d{5}\z/,
