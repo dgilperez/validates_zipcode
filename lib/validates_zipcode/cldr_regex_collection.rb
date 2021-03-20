@@ -34,8 +34,7 @@ module ValidatesZipcode
       AD: /\AAD\d{3}\z/,
       AR: /\A[A-HJ-NP-Z]{1}\d{4}([A-Z]{3})?\z/,
       AM: /\A(37)?\d{4}\z/,
-      # NOTE: Bahrain has no postal codes
-      # BH: /\A((1[0-2]|[2-9])\d{2})?\z/,
+      BH: /\A(1[0-2]|[1-9])\d{2}\z/,
       BD: /\A\d{4}\z/,
       BB: /\A(BB)\d{5}\z/,
       BY: /\A\d{6}\z/,
