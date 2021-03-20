@@ -17,13 +17,8 @@ describe ValidatesZipcode, '#validate_each' do
 
       context 'does not validate with invalid zipcodes' do
         values[:invalid].each do |zipcode|
-          display_name = if zipcode.nil?
-                           "nil"
-                         elsif zipcode.blank?
-                           "blank"
-                         else
-                           zipcode
-                         end
+          display_name = zipcode.nil? ? 'nil' : zipcode.blank? ? 'blank' : zipcode
+
           it display_name.to_s do
             record = build_record(zipcode, country_code)
             zipcode_should_be_invalid(record, nil)
@@ -45,14 +40,14 @@ describe ValidatesZipcode, '#validate_each' do
       it 'validates with a valid zipcode' do
         %w[0800 6369].each do |zipcode|
           record = build_record(zipcode, 'PA')
-          zipcode_should_be_valid(record, excluded_country_codes: ['PA'])
+          zipcode_should_be_valid(record, excluded_country_codes: %w[PA])
         end
       end
 
       it 'validates with an invalid zipcode' do
         %w[10800 369 A341].each do |zipcode|
           record = build_record(zipcode, 'PA')
-          zipcode_should_be_valid(record, excluded_country_codes: ['PA'])
+          zipcode_should_be_valid(record, excluded_country_codes: %w[PA])
         end
       end
     end
@@ -76,17 +71,17 @@ describe ValidatesZipcode, '.valid?' do
     end
 
     it "is true with an excluded country code -  we don't want those to fail and nil is hairy" do
-      expect(ValidatesZipcode.valid?('XXXX!!!XXXX', 'PA', excluded_country_codes: ['PA'])).to eq(true)
+      expect(ValidatesZipcode.valid?('XXXX!!!XXXX', 'PA', excluded_country_codes: %w[PA])).to eq(true)
     end
   end
 end
 
 describe ValidatesZipcode, '.format' do
-  it "formats valid zipcodes" do
+  it 'formats valid zipcodes' do
     expect(ValidatesZipcode.format('Ka9 2dj', 'UK')).to eq('KA9 2DJ')
   end
 
-  it "raises for invalid zipcodes" do
+  it 'raises for invalid zipcodes' do
     expect { ValidatesZipcode.format('KA9 1tr', 'DE') }.to raise_error(ValidatesZipcode::InvalidZipcodeError)
   end
 end
