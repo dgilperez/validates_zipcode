@@ -67,7 +67,7 @@ module ValidatesZipcode
       KW: /\A\d{5}\z/,
       LA: /\A\d{5}\z/,
       LB: /\A(\d{4}([ ]?\d{4})?)?\z/,
-      LU: /\A(L|L\-)?\d{4}\z/,
+      LU: /\A(L[\- ]?)?\d{4}\z/,
       MK: /\A\d{4}\z/,
       MY: /\A\d{5}\z/,
       MV: /\A\d{5}\z/,
@@ -195,9 +195,9 @@ module ValidatesZipcode
       KN: /\A(KN)\d{4}\z/i,
       KP: /\A([A-Z\d\s]){3,8}\z/i,
       LI: /\A\d{4}\z/,
-      LV: /\A(LV\-?)?\d{4}\z/i,
+      LV: /\A(LV[\- ]?)?\d{4}\z/i,
       LY: /\A\d{5}\z/,
-      LT: /\A(LT\-?)?\d{5}\z/i
+      LT: /\A(LT[\- ]?)?\d{5}\z/i
       LC: /\A([A-Z\d\s]){3,}\z/i,
       MC: /\A\d{5}\z/,
       MD: /\A(([A-Z]){2})(|\s)\d{4}\z/i,
