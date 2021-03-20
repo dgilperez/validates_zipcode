@@ -116,7 +116,7 @@ module ValidatesZipcode
       GF: /\A9[78]3\d{2}\z/,
       GP: /\A9[78][01]\d{2}\z/,
       GS: /\ASIQQ[ ]?1ZZ\z/i,
-      GU: /\A969([1-3][0-9])([ \-]\d{4})?\z/,
+      GU: /\A969[1-3]\d([ \-]\d{4})?\z/,
       GW: /\A\d{4}\z/,
       HM: /\A\d{4}\z/,
       IQ: /\A\d{5}\z/,
