@@ -134,7 +134,7 @@ module ValidatesZipcode
       PM: /\A9[78]5\d{2}\z/,
       PN: /\APCRN[ ]?1ZZ\z/i,
       PW: /\A96940\z/,
-      RE: /\A((97)(4|7|8)[0-9][0-9])\z/,
+      RE: /\A974\d{2}\z/,
       SH: /\A(ASCN|STHL|TDCU)[ ]?1ZZ\z/i,
       SJ: /\A\d{4}\z/,
       SZ: /\A[HLMS]\d{3}\z/i,
