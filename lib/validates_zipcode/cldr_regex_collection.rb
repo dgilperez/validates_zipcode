@@ -177,7 +177,6 @@ module ValidatesZipcode
       ER: /\A([A-Z\d\s]){3,}\z/i,
       FJ: /\A([A-Z\d\s]){3,}\z/i,
       FR: /\A\d{5}\z/,
-      # https://www.gpost.ge/?site-lang=en&site-path=help%2Fzipcodes%2F&group=3
       GA: /\A\d{4}\z/,
       GD: /\A([A-Z\d\s]){3,}\z/i,
       GH: /\A([A-Z\d\s]){3,}\z/i,
@@ -196,9 +195,9 @@ module ValidatesZipcode
       KN: /\A(KN)\d{4}\z/i,
       KP: /\A([A-Z\d\s]){3,8}\z/i,
       LI: /\A\d{4}\z/,
-      LV: /\A(LV)?\-?\d{4}\z/i,
+      LV: /\A(LV\-?)?\d{4}\z/i,
       LY: /\A\d{5}\z/,
-      LT: /\A(LT-)?\d{5}\z/i,
+      LT: /\A(LT\-?)?\d{5}\z/i
       LC: /\A([A-Z\d\s]){3,}\z/i,
       MC: /\A\d{5}\z/,
       MD: /\A(([A-Z]){2})(|\s)\d{4}\z/i,
