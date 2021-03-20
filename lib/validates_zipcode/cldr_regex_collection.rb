@@ -66,8 +66,7 @@ module ValidatesZipcode
       KE: /\A\d{5}\z/,
       KW: /\A\d{5}\z/,
       LA: /\A\d{5}\z/,
-      # NOTE: Lebanon has no postal codes
-      # LB: /\A(\d{4}([ ]?\d{4})?)?\z/,
+      LB: /\A(\d{4}([ ]?\d{4})?)?\z/,
       LU: /\A(L|L\-)?\d{4}\z/,
       MK: /\A\d{4}\z/,
       MY: /\A\d{5}\z/,
