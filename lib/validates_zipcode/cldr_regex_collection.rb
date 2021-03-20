@@ -149,7 +149,7 @@ module ValidatesZipcode
       AL: /\A\d{4}\z/,
       AG: /\A([A-Z\d\s]){3,}\z/i,
       AO: /\A([A-Z\d\s]){3,}\z/i,
-      AZ: /\A([A-Z\d\s]){3,}\z/i,
+      AZ: /\A(AZ[ ]?)?\d{4}\z/i,
       BF: /\A([A-Z\d\s]){3,}\z/i,
       BI: /\A([A-Z\d\s]){3,}\z/i,
       BS: /\A([A-Z\d\s]){3,}\z/i,
