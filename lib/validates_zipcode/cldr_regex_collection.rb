@@ -193,8 +193,8 @@ module ValidatesZipcode
       # On February 12, 2007 it was announced: "POST CODE PROJECT SUSPENDED INDEFINITELY"
       # https://en.youbianku.com/Jamaica#:~:text=Jamaica%20has%20no%20postcode%20system,the%20name%20of%20the%20town.
       JM: /\A((JM(DCN|CHR|AKN|DMR|BPD|AAW|CAN|ACE|DEH|CJS|BMY|BTS|CTY|DWD)(0[1-9]|[1-2]\d))|\d{1,2})?\z/i,
-      KI: /\A(KI)\d{4}\z/i,
-      KN: /\A(KN)\d{4}\z/i,
+      KI: /\AKI0[1-3]\d{2}\z/i,
+      KN: /\AKN[ ]?\d{4}\z/i,
       KP: /\A([A-Z\d\s]){3,8}\z/i,
       LI: /\A\d{4}\z/,
       LV: /\A(LV[\- ]?)?\d{4}\z/i,
