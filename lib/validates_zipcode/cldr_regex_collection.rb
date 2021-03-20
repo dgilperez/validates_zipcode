@@ -40,7 +40,7 @@ module ValidatesZipcode
       BY: /\A\d{6}\z/,
       BM: /\A[A-Z]{2}[ ]?[A-Z0-9]{2}\z/,
       BA: /\A\d{5}\z/,
-      BN: /\A[BKTP]{1}[A-Z]{1}[ ]?\d{4}\z/i,
+      BN: /\A[BKTP][A-Z][ ]?\d{4}\z/i,
       BG: /\A\d{4}\z/,
       KH: /\A\d{5}\z/,
       CV: /\A\d{4}\z/,
