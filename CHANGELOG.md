@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.4.0
+
+**HEADS UP**: While I don't think this update would break any system for anyone, many formats where revisited to make them more loose or strict, potentially rendering your data invalid, particularly in edge cases or with data that was already incorrect in the first place and not flagges as such. I recommend you check your data with the new version in case these validations are critical to you. I am not releasing this as a 1.0 because there are no breaking changes in the API though. See PR #54 for more details.
+
+- Many regexps where modified to include recent changes in postal services, fix issues, narrow down formats that where unnecessary broad, allow for some looser cases such as optional whitespaces and making many of them case insensitive and removing countries with no postal codes - See PR #54. Thanks to ~ @ojsdude with some help from @dgilperez
+- Allow the gem to generate test data from the formatters. See README ~ @ojsdude
+- Officialy support Ruby 3 and Rails 6.1
+
 ## 0.3.3
 
 - Fixes AR regex
