@@ -36,3 +36,5 @@ matrix:
       gemfile: gemfiles/rails_6.1.gemfile
     - rvm: 2.4.9
       gemfile: gemfiles/rails_edge.gemfile
+    - rvm: 3.0.0
+      gemfile: gemfiles/rails_edge.gemfile
