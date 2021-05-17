@@ -10,17 +10,17 @@ module ValidatesZipcode
       @format                 = args.fetch(:format, false)
     end
 
-    def valid?(zipcode = nil)
+    def valid?
       return true if @excluded_country_codes.include?(@country_alpha2)
       return true unless regexp
 
-      zipcode ||= @format ? formatted_zip : @zipcode
+      zipcode = @format ? formatted_zip : @zipcode
       !!(regexp =~ zipcode)
     end
     alias_method :validate, :valid?
 
     def format
-      raise InvalidZipcodeError, "invalid zipcode #{@zipcode} for country #{@country_alpha2.to_s.upcase}" unless valid?(formatted_zip)
+      raise InvalidZipcodeError, "invalid zipcode #{@zipcode} for country #{@country_alpha2.to_s.upcase}" unless valid?
 
       formatted_zip
     end
