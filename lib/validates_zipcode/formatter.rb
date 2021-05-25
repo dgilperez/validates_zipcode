@@ -7,7 +7,12 @@ module ValidatesZipcode
       AT: ->(z) { z.scan(/\d/).join },
       CA: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(3, ' ').join },
       CZ: ->(z) { z.scan(/\d/).insert(3, ' ').join },
-      DE: ->(z) { z.scan(/\d/).join.rjust(5, '0') },
+      DE: ->(z) {
+        digits = z.scan(/\d/)
+        result = digits.join
+        result.prepend('0') if digits.count < 5
+        result
+      },
       GB: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(-4, ' ').join },
       NL: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(4, ' ').join },
       PL: ->(z) { z.scan(/\d/).insert(2, '-').join },
