@@ -52,6 +52,18 @@ describe ValidatesZipcode, '#validate_each' do
       end
     end
   end
+
+  context 'with formatting' do
+    it 'is true with a valid zipcode for a given country code' do
+      zipcode_should_be_valid(build_record('28 108', 'ES'), format: true)
+      zipcode_should_be_invalid(build_record('28 108', 'ES'), nil)
+      zipcode_should_be_invalid(build_record('28 108', 'ES'), nil, format: false)
+
+      zipcode_should_be_valid(build_record('V2r-1c8', 'CA'), format: true)
+      zipcode_should_be_invalid(build_record('V2r-1c8', 'CA'), nil)
+      zipcode_should_be_invalid(build_record('V2r-1c8', 'CA'), nil, format: false)
+    end
+  end
 end
 
 describe ValidatesZipcode, '.valid?' do
@@ -75,13 +87,13 @@ describe ValidatesZipcode, '.valid?' do
     end
   end
 
-  context 'Canada' do
-    it 'is true when formatting is on' do
-      expect(ValidatesZipcode.valid?('V2r-1c8', 'CA', { format: true })).to eq(true)
-    end
+  context 'with formatting' do
+    it 'is true with a valid zipcode for a given country code' do
+      expect(ValidatesZipcode.valid?('28 108', 'ES', format: true)).to eq(true)
+      expect(ValidatesZipcode.valid?('28 108', 'ES', format: false)).to eq(false)
 
-    it 'is false when formatting is off' do
-      expect(ValidatesZipcode.valid?('V2r-1c8', 'CA')).to eq(false)
+      expect(ValidatesZipcode.valid?('V2r-1c8', 'CA', format: true)).to eq(true)
+      expect(ValidatesZipcode.valid?('V2r-1c8', 'CA', format: false)).to eq(false)
     end
   end
 end

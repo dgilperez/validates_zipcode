@@ -5,6 +5,7 @@ module ValidatesZipcode
 
     ZIPCODES_TRANSFORMATIONS = {
       AT: ->(z) { z.scan(/\d/).join },
+      ES: :AT,
       CA: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(3, ' ').join },
       CZ: ->(z) { z.scan(/\d/).insert(3, ' ').join },
       DE: ->(z) {

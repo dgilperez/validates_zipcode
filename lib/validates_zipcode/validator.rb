@@ -31,13 +31,12 @@ module ValidatesZipcode
       options = { zipcode: value.to_s,
                   country_alpha2: alpha2,
                   excluded_country_codes: @excluded_country_codes,
-                  format: @format
-      }
+                  format: @format }
 
-      unless ValidatesZipcode::Zipcode.new(options).valid?
-        message = @message || I18n.t('errors.messages.invalid_zipcode', value: value, default: 'Zipcode is invalid')
-        record.errors.add(attribute, :invalid_zipcode, message: message)
-      end
+      return if ValidatesZipcode::Zipcode.new(options).valid?
+
+      message = @message || I18n.t('errors.messages.invalid_zipcode', value: value, default: 'Zipcode is invalid')
+      record.errors.add(attribute, :invalid_zipcode, message: message)
     end
   end
 end
