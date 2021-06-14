@@ -20,7 +20,6 @@ module ValidatesZipcode
     alias_method :validate, :valid?
 
     def format
-      @format = true
       raise InvalidZipcodeError, "invalid zipcode #{formatted_zip} for country #{@country_alpha2.to_s.upcase}" unless valid?
 
       formatted_zip
