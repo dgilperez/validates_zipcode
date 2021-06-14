@@ -14,7 +14,7 @@ module ValidatesZipcode
   end
 
   def self.format(*args)
-    build_zipcode(*args, { format: true }).format
+    build_zipcode(*args, format: true).format
   end
 
   def self.build_zipcode(zipcode, country_alpha2, options = {})
