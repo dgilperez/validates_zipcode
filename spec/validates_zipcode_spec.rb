@@ -74,6 +74,16 @@ describe ValidatesZipcode, '.valid?' do
       expect(ValidatesZipcode.valid?('XXXX!!!XXXX', 'PA', excluded_country_codes: %w[PA])).to eq(true)
     end
   end
+
+  context 'Canada' do
+    it 'is true when formatting is on' do
+      expect(ValidatesZipcode.valid?('V2r-1c8', 'CA', { format: true })).to eq(true)
+    end
+
+    it 'is false when formatting is off' do
+      expect(ValidatesZipcode.valid?('V2r-1c8', 'CA')).to eq(false)
+    end
+  end
 end
 
 describe ValidatesZipcode, '.format' do
