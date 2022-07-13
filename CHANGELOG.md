@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.1
+
+- Fixes Mongolia postal codes, thanks to ~ @lucasfcunha
+
 ## 0.5.0
 
 - Pass `format: true` option to the `validates_zipcode` or the constructor to attempt for format a given code using the (uncomplete) list of formatters by country. This process will happen before the validation takes place, dealing with case sensitive formats and whitespace, amongst others. This option is false by default for backwards compatibility. ~ @chloe-meister
