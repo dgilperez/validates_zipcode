@@ -124,7 +124,7 @@ module ValidatesZipcode
       LR: /\A\d{4}\z/,
       LS: /\A\d{3}\z/,
       MG: /\A\d{3}\z/,
-      MN: /\A\d{6}\z/,
+      MN: /\A\d{5}(-?\d{4})?\z/,
       MP: /\A9695[012]([ \-]\d{4})?\z/,
       MQ: /\A9[78]2\d{2}\z/,
       NC: /\A988\d{2}\z/,
