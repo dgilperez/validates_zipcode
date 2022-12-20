@@ -30,7 +30,8 @@ module ValidatesZipcode
         digits = z.scan(/\d/)
         digits.insert(5, '-') if digits.count > 5
         digits.join
-      }
+      },
+      PR: :US
     }.freeze
 
     def initialize(args = {})
