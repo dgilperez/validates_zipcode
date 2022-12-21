@@ -185,7 +185,7 @@ module ValidatesZipcode
       GI: /\A(GX11[ ]?1AA)\z/i,
       GR: /\A\d{3}[ ]?\d{2}\z/,
       GY: /\A([A-Z\d\s]){3,}\z/i,
-      HN: /\A(([A-Z]){2}|\d{1,2})\d{4}\z/i,
+      HN: /\A([A-Z]{2}|\d{1})\d{4}\z/i,
       IO: /\A\d{5}\z/,
       IR: /\A\d{5}\z/,
       JP: /\A\d{3}\-?\d{4}\z/,
