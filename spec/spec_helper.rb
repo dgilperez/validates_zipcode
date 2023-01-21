@@ -2628,6 +2628,7 @@ TEST_DATA = {
     valid: %w[
       BV2722
       XY1234
+      12345
     ],
     invalid: [
       nil,
@@ -2635,7 +2636,8 @@ TEST_DATA = {
       'invalid_zip',
       'B2722',
       'XY12345',
-      'XY123'
+      'XY123',
+      '123456'
     ]
   },
   IO: {
