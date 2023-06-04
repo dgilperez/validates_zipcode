@@ -118,7 +118,7 @@ def zipcode_should_be_invalid(record, _zipcode, options = {})
   ValidatesZipcode::Validator.new(options.merge(attributes: :zipcode)).validate(record)
 
   expect(record.errors.size).to eq 1
-  expect(record.errors.messages[:zipcode]).to include 'Zipcode is invalid'
+  expect(record.errors.messages[:zipcode]).to include 'is invalid'
 end
 
 def zipcode_should_be_invalid_with_custom_message(record, _zipcode, options = {})
