@@ -35,6 +35,10 @@ describe ValidatesZipcode::Formatter, '#format' do
     it { check_format('US', '22162 1010' => '22162-1010') }
   end
 
+  context 'MT' do
+    it { check_format('MT', 'GZR1020' => 'GZR 1020') }
+  end
+
   def check_format(country, formatting)
     from_zip, to_zip = formatting.first
     expect(::ValidatesZipcode::Formatter.new(zipcode: from_zip, country_alpha2: country).format).to eq(to_zip)
