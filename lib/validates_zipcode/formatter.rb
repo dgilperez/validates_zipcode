@@ -19,7 +19,7 @@ module ValidatesZipcode
       PL: ->(z) { z.scan(/\d/).insert(2, '-').join },
       SK: :CZ,
       UK: :GB,
-      MT: :GB,
+      MT: ->(z) { z.upcase.scan(WORD_CHAR_AND_DIGIT).insert(3, ' ').join },
       FK: :GB,
       GS: :GB,
       PN: :GB,
