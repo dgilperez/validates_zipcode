@@ -158,7 +158,8 @@ module ValidatesZipcode
       BJ: /\A([A-Z\d\s]){3,}\z/i,
       BT: /\A\d{5}\z/,
       BQ: /\A([A-Z\d\s]){3,}\z/i,
-      BO: /\A\d{4}\z/,
+      # NOTE: Bolivia has no postal codes
+      # BO: /\A\d{4}\z/,
       BW: /\A([A-Z\d\s]){3,}\z/i,
       CF: /\A([A-Z\d\s]){3,}\z/i,
       CG: /\A([A-Z\d\s]){3,}\z/i,
