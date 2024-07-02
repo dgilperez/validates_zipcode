@@ -211,7 +211,7 @@ module ValidatesZipcode
       MW: /\A([A-Z\d\s]){3,}\z/i,
       MZ: /\A\d{4}\z/,
       NA: /\A\d{5}\z/,
-      NP: /\A\d{6}\z/,
+      NP: /\A\d{5}\z/,
       NR: /\A([A-Z\d\s]){3,}\z/i,
       PT: /\A\d{4}([\-]\d{3})?\z/,
       PS: /\A\d{3}\z/,
