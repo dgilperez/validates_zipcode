@@ -42,7 +42,7 @@ module ValidatesZipcode
       BA: /\A\d{5}\z/,
       BN: /\A[BKTP][A-Z][ ]?\d{4}\z/i,
       BG: /\A\d{4}\z/,
-      KH: /\A\d{5}\z/,
+      KH: /\A\d{6}\z/,
       CV: /\A\d{4}\z/,
       CL: /\A\d{3}[-]?\d{4}\z/,
       HR: /\A\d{5}\z/,
