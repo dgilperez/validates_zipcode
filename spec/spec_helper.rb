@@ -423,6 +423,7 @@ TEST_DATA = {
     valid: %w[
       C1234CHN
       C1234
+      6000
     ],
     invalid: [
       nil,
