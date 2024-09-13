@@ -12,6 +12,10 @@ If you were relying on the old behaviour (passing arbitrary country codes and ex
 
 - Return `false` when the country code is not a known ISO 3166-1 alpha-2 code, instead of silently returning `true` — fixes #67
 
+## 0.5.3
+
+- See commits up to 4e5a3132061d57d220d1616beb15d15a47d301df
+
 ## 0.5.2
 
 - Added support for Puerto Rico, thanks to ~ @tahanson
