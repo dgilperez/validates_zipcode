@@ -80,7 +80,7 @@ module ValidatesZipcode
       NG: /\A\d{6}\z/,
       OM: /\A(PC )?\d{3}\z/i,
       PK: /\A\d{5}\z/,
-      PY: /\A\d{4}\z/,
+      PY: /\A(\d{4}|\d{6})\z/,
       PH: /\A\d{4}\z/,
       PL: /\A\d{2}[ -]?\d{3}\z/,
       PR: /\A00[679]\d{2}([ \-]\d{4})?\z/,
