@@ -82,6 +82,14 @@ describe ValidatesZipcode, '.valid?' do
       expect(ValidatesZipcode.valid?('12345', 'ZZ')).to eq(true)
     end
 
+    it "is false with a malformed country code that is not a valid ISO 3166-1 alpha-2 code" do
+      expect(ValidatesZipcode.valid?('Sw1A 2aA', 'UKXXXXX')).to eq(false)
+      expect(ValidatesZipcode.valid?('12345', 'USA')).to eq(false)    # 3 letters
+      expect(ValidatesZipcode.valid?('12345', 'U')).to eq(false)      # 1 letter
+      expect(ValidatesZipcode.valid?('12345', '12')).to eq(false)     # digits
+      expect(ValidatesZipcode.valid?('12345', '')).to eq(false)       # empty
+    end
+
     it "is true with an excluded country code -  we don't want those to fail and nil is hairy" do
       expect(ValidatesZipcode.valid?('XXXX!!!XXXX', 'PA', excluded_country_codes: %w[PA])).to eq(true)
     end

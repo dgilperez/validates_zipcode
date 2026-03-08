@@ -12,6 +12,7 @@ module ValidatesZipcode
 
     def valid?
       return true if @excluded_country_codes.include?(@country_alpha2)
+      return false unless valid_country_alpha2?
       return true unless regexp
 
       zipcode = @format ? formatted_zip : @zipcode
@@ -29,6 +30,13 @@ module ValidatesZipcode
 
     def regexp
       @regexp ||= regexp_for_country_alpha2(@country_alpha2)
+    end
+
+    # ISO 3166-1 alpha-2 codes are exactly 2 uppercase ASCII letters.
+    # Anything longer or shorter (e.g. "UKXXXXX", "G", "12") is not a
+    # valid country code and should fail validation immediately.
+    def valid_country_alpha2?
+      @country_alpha2.to_s.match?(/\A[A-Za-z]{2}\z/)
     end
 
     def formatted_zip
