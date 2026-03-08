@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## 0.6.0
+
+**Heads up:** This release changes the behaviour of `ValidatesZipcode.valid?` when an unknown or malformed country code is passed. Previously, passing a country code not recognised by the gem (e.g. `'UKXXXXX'`) would return `true` — no regex to match against meant no failure. It will now return `false`.
+
+If you were relying on the old behaviour (passing arbitrary country codes and expecting `true`), this is a breaking change for those cases. For everyone else, this is the expected fix — an unrecognised country is not a valid one.
+
+- Return `false` when the country code is not a known ISO 3166-1 alpha-2 code, instead of silently returning `true` — fixes #67
+
 ## 0.5.2
 
 - Added support for Puerto Rico, thanks to ~ @tahanson
