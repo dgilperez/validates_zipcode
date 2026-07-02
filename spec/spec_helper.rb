@@ -2839,13 +2839,16 @@ TEST_DATA = {
   },
   MD: {
     valid: %w[
+      2001
       MD2001
+      MD-2001
     ],
     invalid: [
       nil,
       '',
       'invalid_zip',
-      'MD-2100'
+      'XY2021',
+      'MD-202'
     ]
   },
   ME: {
