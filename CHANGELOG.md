@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Fix the Moldova (MD) postcode pattern: accept the canonical `MD-####` form and bare 4-digit codes, and reject non-`MD` letter prefixes. The previous pattern required any two letters and rejected the hyphenated form — fixes #73
+
 ## 0.6.0
 
 **Heads up:** This release changes the behaviour of `ValidatesZipcode.valid?` when an unknown or malformed country code is passed. Previously, passing a country code not recognised by the gem (e.g. `'UKXXXXX'`) would return `true` — no regex to match against meant no failure. It will now return `false`.

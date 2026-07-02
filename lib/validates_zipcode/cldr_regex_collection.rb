@@ -203,7 +203,7 @@ module ValidatesZipcode
       LT: /\A(LT[\- ]?)?\d{5}\z/i,
       LC: /\A([A-Z\d\s]){3,}\z/i,
       MC: /\A\d{5}\z/,
-      MD: /\A(([A-Z]){2})(|\s)\d{4}\z/i,
+      MD: /\A(MD[- ]?)?\d{4}\z/i,
       ME: /\A([A-Z\d\s]){3,}\z/i,
       MH: /\A\d{5}\z/,
       MR: /\A([A-Z\d\s]){3,}\z/i,
