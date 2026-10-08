@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## 0.7.0
+
 **Heads up:** This release requires Ruby >= 3.3 and ActiveModel >= 8.0, the versions that still receive security fixes. Apps on older Ruby or Rails should stay on 0.6.x.
 
 - Drop support for end-of-life Ruby (< 3.3) and Rails (< 8.0); test on Ruby 3.3, 3.4 and 4.0 with Rails 8.0, 8.1 and main
