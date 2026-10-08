@@ -41,6 +41,6 @@ describe ValidatesZipcode::Formatter, '#format' do
 
   def check_format(country, formatting)
     from_zip, to_zip = formatting.first
-    expect(::ValidatesZipcode::Formatter.new(zipcode: from_zip, country_alpha2: country).format).to eq(to_zip)
+    expect(ValidatesZipcode::Formatter.new(zipcode: from_zip, country_alpha2: country).format).to eq(to_zip)
   end
 end
