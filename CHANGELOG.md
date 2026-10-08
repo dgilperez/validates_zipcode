@@ -6,12 +6,19 @@ All notable changes to this project will be documented in this file.
 
 ## 0.7.0
 
-**Heads up:** This release requires Ruby >= 3.3 and ActiveModel >= 8.0, the versions that still receive security fixes. Apps on older Ruby or Rails should stay on 0.6.x.
+**Heads up:** This release requires Ruby >= 3.3 and ActiveModel >= 8.0, the versions that still receive security fixes. Apps on older Ruby or Rails should stay on 0.6.x (0.6.1 has the same postcode fixes).
 
 - Drop support for end-of-life Ruby (< 3.3) and Rails (< 8.0); test on Ruby 3.3, 3.4 and 4.0 with Rails 8.0, 8.1 and main
 - Replace the defunct Travis CI setup with GitHub Actions
 - Accept Nigeria's (NG) 11-character digital postcode, such as `EK-01-A03-FK-01`, alongside the six-digit code. NIPOST launched it in October 2026. Thanks to ~ @Adeniyikayodee
 - Fix the Moldova (MD) postcode pattern: accept the canonical `MD-####` form and bare 4-digit codes, and reject non-`MD` letter prefixes. The previous pattern required any two letters and rejected the hyphenated form — fixes #73
+
+## 0.6.1
+
+Backport of the postcode fixes in 0.7.0 for apps that cannot move to Ruby >= 3.3 and Rails >= 8.0 yet, released from the `0-6-stable` branch. Requirements are unchanged from 0.6.0.
+
+- Accept Nigeria's (NG) 11-character digital postcode, such as `EK-01-A03-FK-01`, alongside the six-digit code. Thanks to ~ @Adeniyikayodee
+- Fix the Moldova (MD) postcode pattern — fixes #73
 
 ## 0.6.0
 
