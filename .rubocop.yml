@@ -10,9 +10,9 @@ require:
 
 # Common configuration.
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 3.3
 
-  TargetRailsVersion: 5.2
+  TargetRailsVersion: 8.0
 
   # Include common Ruby source files.
   Include:
