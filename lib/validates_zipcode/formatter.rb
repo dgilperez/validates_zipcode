@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module ValidatesZipcode
   class Formatter
-    WORD_CHAR_AND_DIGIT = /[A-Z0-9]/.freeze
+    WORD_CHAR_AND_DIGIT = /[A-Z0-9]/
 
     ZIPCODES_TRANSFORMATIONS = {
       AT: ->(z) { z.scan(/\d/).join },

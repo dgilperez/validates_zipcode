@@ -9,12 +9,12 @@ require 'validates_zipcode/zipcode'
 require 'validates_zipcode/formatter'
 
 module ValidatesZipcode
-  def self.valid?(*args)
-    build_zipcode(*args).valid?
+  def self.valid?(*)
+    build_zipcode(*).valid?
   end
 
-  def self.format(*args)
-    build_zipcode(*args).format
+  def self.format(*)
+    build_zipcode(*).format
   end
 
   def self.build_zipcode(zipcode, country_alpha2, options = {})

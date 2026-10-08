@@ -11,22 +11,18 @@ Gem::Specification.new do |s|
   s.email         = ['dgilperez@gmail.com']
   s.summary       = 'Localizable zipcode validation for Rails.'
   s.description   = 'Adds zipcode validation methods to ActiveModel considering different country zipcode formats.'
-  s.homepage      = 'http://github.com/dgilperez/validates_zipcode'
+  s.homepage      = 'https://github.com/dgilperez/validates_zipcode'
   s.license       = 'MIT'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = %w[lib]
 
-  s.required_ruby_version = '>= 2.4'
+  s.required_ruby_version = '>= 3.3'
 
-  s.add_dependency 'activemodel', '>= 4.2.0'
+  s.add_dependency 'activemodel', '>= 8.0'
 
-  s.add_development_dependency 'appraisal'
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake', '>= 12.3.3'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'rubocop-rails'
+  s.metadata['changelog_uri'] = "#{s.homepage}/blob/master/CHANGELOG.md"
+  s.metadata['source_code_uri'] = s.homepage
+  s.metadata['rubygems_mfa_required'] = 'true'
 end

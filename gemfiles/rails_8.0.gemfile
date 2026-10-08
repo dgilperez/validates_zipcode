@@ -6,6 +6,6 @@ gem "appraisal"
 gem "rake", ">= 13.0"
 gem "rspec"
 gem "rubocop"
-gem "activemodel", github: "rails/rails"
+gem "activemodel", "~> 8.0.0"
 
 gemspec path: "../"

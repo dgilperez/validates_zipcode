@@ -17,7 +17,13 @@ describe ValidatesZipcode, '#validate_each' do
 
       context 'does not validate with invalid zipcodes' do
         values[:invalid].each do |zipcode|
-          display_name = zipcode.nil? ? 'nil' : zipcode.blank? ? 'blank' : zipcode
+          display_name = if zipcode.nil?
+                           'nil'
+                         elsif zipcode.blank?
+                           'blank'
+                         else
+                           zipcode
+                         end
 
           it display_name.to_s do
             record = build_record(zipcode, country_code)
@@ -73,7 +79,7 @@ describe ValidatesZipcode, '.valid?' do
     end
 
     it 'is false with an invalid zipcode for a given country code' do
-      ['1234', '12345-12345', 'D0D0D0', 'invalid_zip'].each do |zipcode|
+      %w[1234 12345-12345 D0D0D0 invalid_zip].each do |zipcode|
         expect(ValidatesZipcode.valid?(zipcode, 'ES')).to eq(false)
       end
     end
@@ -82,7 +88,7 @@ describe ValidatesZipcode, '.valid?' do
       expect(ValidatesZipcode.valid?('12345', 'ZZ')).to eq(true)
     end
 
-    it "is false with a malformed country code that is not a valid ISO 3166-1 alpha-2 code" do
+    it 'is false with a malformed country code that is not a valid ISO 3166-1 alpha-2 code' do
       expect(ValidatesZipcode.valid?('Sw1A 2aA', 'UKXXXXX')).to eq(false)
       expect(ValidatesZipcode.valid?('12345', 'USA')).to eq(false)    # 3 letters
       expect(ValidatesZipcode.valid?('12345', 'U')).to eq(false)      # 1 letter
@@ -146,6 +152,7 @@ end
 
 class ValidationDummyClass
   include ::ActiveModel::Validations
+
   attr_accessor :zipcode, :country_alpha2
 
   def self.name
