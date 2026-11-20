@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Fix the United Kingdom (GB, UK) postcode pattern to anchor both alternatives. `\A` only applied to `GIR 0AA` and `\z` only to the regular form, so strings like `hello SW1A 2AA` or `GIR 0AA, London` were accepted — fixes #76
+
 ## 0.7.0
 
 **Heads up:** This release requires Ruby >= 3.3 and ActiveModel >= 8.0, the versions that still receive security fixes. Apps on older Ruby or Rails should stay on 0.6.x (0.6.1 has the same postcode fixes).
