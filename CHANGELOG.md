@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Accept the current postcode formats of Iran (IR, 10 digits such as `11936-12345`), Taiwan (TW, 3+3 digits such as `106314`) and Vietnam (VN, 5 digits such as `70010`). Older forms stay valid.
+
 ## 0.7.1
 
 - Fix the United Kingdom (GB, UK) postcode pattern to anchor both alternatives. `\A` only applied to `GIR 0AA` and `\z` only to the regular form, so strings like `hello SW1A 2AA` or `GIR 0AA, London` were accepted — fixes #76. Thanks to ~ @bardrop
