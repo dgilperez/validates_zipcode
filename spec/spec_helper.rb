@@ -13,7 +13,9 @@ TEST_DATA = {
       'id1 1qd',
       'Sw1A 2aA',
       'id11qd',
-      'SW1A2AA'
+      'SW1A2AA',
+      'GIR 0AA',
+      'gir0aa'
     ],
     invalid: [
       nil,
@@ -21,7 +23,11 @@ TEST_DATA = {
       'invalid_zip',
       'nope',
       'id11qd1000',
-      '28001'
+      '28001',
+      'GIR 0AA1',
+      'GIR 0AA, London',
+      'hello SW1A 2AA',
+      '12345 SW1A 2AA'
     ]
   },
   UK: {
@@ -35,7 +41,9 @@ TEST_DATA = {
       'id1 1qd',
       'Sw1A 2aA',
       'id11qd',
-      'SW1A2AA'
+      'SW1A2AA',
+      'GIR 0AA',
+      'gir0aa'
     ],
     invalid: [
       nil,
@@ -43,7 +51,11 @@ TEST_DATA = {
       'invalid_zip',
       'nope',
       'id11qd1000',
-      '28001'
+      '28001',
+      'GIR 0AA1',
+      'GIR 0AA, London',
+      'hello SW1A 2AA',
+      '12345 SW1A 2AA'
     ]
   },
   JE: {
